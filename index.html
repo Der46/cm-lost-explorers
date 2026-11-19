@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>失落探險隊 Lost Explorers｜大佬群CSL製作</title>
+<title>失落探險隊</title>
 <meta name="description" content="Coin Master 失落探險隊活動攻略：獎勵條、恐龍血量、全隊估算、下注順序與每週活動時間表。大佬群CSL製作。">
 <meta name="theme-color" content="#0E2116">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F2A93B'/%3E%3Cpath d='M10 40Q14 32 24 32L32 30Q36 20 44 18L54 18Q58 19 58 24L58 28L50 29L51 32L46 33Q44 38 40 40L40 48L36 48L34 42L28 42L28 48L22 48L23 42Q16 42 10 40Z' fill='%230E2116'/%3E%3C/svg%3E">
@@ -112,17 +112,6 @@ section{padding:80px 0;scroll-margin-top:calc(var(--hdr,72px) + 12px)}
 
 /* ---------- prize trail (the hero moment) ---------- */
 .trail-panel{background:var(--fern);border:1px solid var(--fern-line);border-radius:var(--radius-lg);padding:24px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
-.trail-ctrl{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px 20px}
-.trail-ctrl label{font-weight:800;color:var(--bone)}
-.count{font-family:var(--font-display);font-weight:800;font-size:1.6rem;line-height:1;color:var(--amber);min-width:3.2ch;text-align:right;font-variant-numeric:tabular-nums}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;margin:0}
-input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(90deg,var(--amber) var(--p,0%),rgba(255,255,255,.12) var(--p,0%))}
-input[type=range]::-moz-range-track{height:10px;border-radius:999px;background:rgba(255,255,255,.12)}
-input[type=range]::-moz-range-progress{height:10px;border-radius:999px;background:var(--amber)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-9px;border-radius:50%;background:#FFE7A8;border:4px solid var(--amber-deep);box-shadow:0 2px 6px rgba(0,0,0,.4)}
-input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#FFE7A8;border:4px solid var(--amber-deep)}
-.trail-meta{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:6px;color:var(--bone-dim);font-weight:700;font-size:.95rem}
-.trail-meta strong{color:var(--bone)}
 .bar{position:relative;margin:34px 6px 8px;height:22px}
 .bar-track{position:absolute;inset:0;display:grid;grid-template-columns:repeat(20,1fr);gap:3px;padding:3px;background:#0b1a11;border-radius:999px;box-shadow:inset 0 2px 4px rgba(0,0,0,.6)}
 .bar-track i{border-radius:3px;background:rgba(255,255,255,.08);transition:background .25s}
@@ -144,18 +133,11 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .prize h3{margin:0;font-family:var(--font-display);font-weight:800;font-size:1.12rem;line-height:1.25}
 .prize p{margin:2px 0 0;font-weight:700;color:var(--ink-soft);font-size:.95rem}
 .prize-txt{display:flex;flex-direction:column;align-items:flex-start}
-.prize .state{display:inline-flex;align-items:center;gap:5px;margin-top:8px;padding:3px 10px 3px 7px;border-radius:999px;background:#3b2a16;color:#FFE7A8;font-size:.8rem;font-weight:800;line-height:1.4}
-.prize .state svg{width:14px;height:14px;flex:none}
-.prize.locked .prize-art{filter:grayscale(.85) brightness(.85);opacity:.6}
-.prize.unlocked{box-shadow:0 2px 0 var(--parchment-2),0 0 0 3px var(--amber),0 12px 24px rgba(242,169,59,.25)}
-.prize.unlocked .state{background:#2f8a35;color:#fff}
 .prize.grand{background:linear-gradient(160deg,#FFF1C4,#F2C766);}
 .prize.grand h3{color:#7a3a05}
 @media (max-width:980px){.prizes{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){
   .trail-panel{padding:18px 14px}
-  .trail-ctrl{grid-template-columns:1fr auto}
-  .trail-ctrl input{grid-column:1/-1;grid-row:2}
   .prizes{grid-template-columns:1fr;gap:12px}
   .prize{display:grid;grid-template-columns:96px 1fr;grid-template-areas:"art top" "art txt";column-gap:12px;align-items:center}
   .prize-top{grid-area:top}
@@ -195,65 +177,6 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 .per b{display:block;margin-top:4px;font-family:var(--font-display);font-size:1.6rem;line-height:1.1;color:var(--bone);font-variant-numeric:tabular-nums}
 @media (max-width:860px){.plan{grid-template-columns:1fr}}
 @media (max-width:400px){.per{grid-template-columns:1fr}}
-.team-fixed{display:flex;align-items:center;gap:10px;margin-bottom:18px;font-weight:800}
-.team-fixed .pigs{display:flex;gap:4px}
-.team-fixed .pigs svg{width:28px;height:22px;color:var(--moss)}
-
-/* ---------- focus planner ---------- */
-.focus{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px;align-items:start}
-.focus-in{background:var(--fern);border:1px solid var(--fern-line);border-radius:var(--radius-lg);padding:22px}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:flex;flex-direction:column;gap:6px;min-width:0}
-.field.wide{grid-column:1/-1}
-.field label{font-weight:800;font-size:.92rem;color:var(--bone)}
-.field input{width:100%;min-height:48px;padding:10px 14px;border-radius:12px;border:1px solid var(--fern-line);background:#0f2b1c;color:var(--bone);font:800 1.1rem/1.2 var(--font-body);font-variant-numeric:tabular-nums}
-.field input::placeholder{color:#7f8f80;font-weight:600}
-.field input:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(242,169,59,.35)}
-.field.mine input{border-color:rgba(242,169,59,.6)}
-.chips-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 10px}
-.chips-head span{font-weight:800;font-size:.92rem}
-.clear{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--fern-line);background:transparent;color:var(--bone-dim);font:700 .85rem/1 var(--font-body);cursor:pointer}
-.clear:hover{color:var(--bone);border-color:var(--amber)}
-.chips{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
-.chip{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;padding:4px 2px;border-radius:12px;border:1px solid var(--fern-line);background:#0f2b1c;color:var(--bone);cursor:pointer;font-family:var(--font-body);transition:background .15s,border-color .15s}
-.chip b{font:800 1rem/1.2 var(--font-display)}
-.chip small{font-size:.72rem;font-weight:700;color:var(--bone-dim);line-height:1.3}
-.chip:hover{border-color:var(--amber)}
-.chip[aria-pressed="true"]{background:#3a2410;border-color:#7a4a1e;color:#E3C893}
-.chip[aria-pressed="true"] b{text-decoration:line-through;text-decoration-thickness:2px}
-.chip.best{border-color:var(--amber);box-shadow:0 0 0 2px var(--amber)}
-.focus-out{display:grid;gap:16px}
-.fcard{background:var(--fern);border:1px solid var(--fern-line);border-radius:var(--radius-lg);padding:20px}
-.fcard h3{margin:0 0 10px;font-family:var(--font-display);font-weight:800;font-size:1.15rem;line-height:1.3}
-.fcard p{margin:6px 0 0;color:var(--bone-dim);font-weight:600}
-.f-first{background:linear-gradient(150deg,#FFF1C4,#F2C766);color:var(--ink);border:0;box-shadow:0 14px 28px rgba(0,0,0,.25)}
-.f-first .lbl{font-weight:800;color:#8a3c0c}
-.f-target{display:flex;align-items:center;gap:12px;margin-top:4px;font-family:var(--font-display);font-weight:800;font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.25}
-.f-target svg{width:58px;height:44px;color:#7a3a05;flex:none}
-.f-first p{color:var(--ink-soft);font-weight:700}
-.order{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none;counter-reset:o}
-.order li{display:flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:999px;background:#0f2b1c;border:1px solid var(--fern-line);font-weight:800;font-size:.9rem;line-height:1.3}
-.order li::before{counter-increment:o;content:counter(o);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--amber);color:var(--ink);font:800 .8rem/1 var(--font-display)}
-.order li small{font-weight:700;color:var(--bone-dim)}
-.members{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-.members li{display:grid;grid-template-columns:minmax(64px,max-content) 1fr;gap:4px 12px;align-items:center}
-.members .who{font-weight:800}
-.members .meter{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
-.members .meter i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#3C9A3A,#9EE07A)}
-.members li.me .meter i{background:linear-gradient(90deg,var(--amber-deep),var(--amber))}
-.members .val{grid-column:2;font-size:.85rem;font-weight:700;color:var(--bone-dim);font-variant-numeric:tabular-nums}
-.warn{display:flex;gap:8px;margin-top:12px;padding:10px 12px;border-radius:12px;background:rgba(217,71,43,.15);color:#FFD2C4;font-weight:700;font-size:.9rem}
-.warn svg{width:18px;height:18px;flex:none;margin-top:2px;color:var(--lava)}
-.warn.tip{background:rgba(147,197,82,.12);color:#D7EDB8}
-.warn.tip svg{color:var(--moss)}
-.outlook{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.outlook div{background:#0f2b1c;border-radius:var(--radius-md);padding:12px}
-.outlook span{display:block;font-size:.82rem;font-weight:700;color:var(--bone-dim);line-height:1.35}
-.outlook b{display:block;margin-top:4px;font:800 1.5rem/1.2 var(--font-display);color:var(--amber);font-variant-numeric:tabular-nums}
-.assume{margin-top:14px;font-size:.82rem;color:var(--bone-dim)}
-@media (max-width:900px){.focus{grid-template-columns:1fr}}
-@media (max-width:440px){.fields{grid-template-columns:1fr}.outlook{grid-template-columns:1fr}.chips{grid-template-columns:repeat(4,minmax(0,1fr))}}
-
 /* ---------- bets ---------- */
 .seqs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .seq{background:var(--parchment);color:var(--ink);border-radius:var(--radius-lg);padding:22px;box-shadow:0 2px 0 var(--parchment-2),0 14px 28px rgba(0,0,0,.25)}
@@ -470,7 +393,6 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
       <a href="#prizes" data-i18n="navPrizes">獎勵</a>
       <a href="#dinos" data-i18n="navDinos">恐龍血量</a>
       <a href="#plan" data-i18n="navPlan">全隊估算</a>
-      <a href="#focus" data-i18n="navFocus">攻擊建議</a>
       <a href="#bets" data-i18n="navBets">下注順序</a>
       <a href="#schedule" data-i18n="navSchedule">時間表</a>
     </nav>
@@ -574,13 +496,7 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
     <div class="wrap">
       <div class="sec-head"><h2 data-i18n="prizeTitle"></h2><p data-i18n="prizeDesc"></p></div>
       <div class="trail-panel">
-        <div class="trail-ctrl">
-          <label for="kills" data-i18n="sliderLabel"></label>
-          <input id="kills" type="range" min="0" max="20" step="1" value="0">
-          <output class="count" id="killsOut" for="kills">0</output>
-        </div>
-        <div class="trail-meta" aria-live="polite"><span id="flagsTxt"></span><span id="hpTxt"></span><span id="unlockTxt"></span></div>
-        <div class="bar" aria-hidden="true"><div class="bar-track" id="barTrack"></div><div id="barMarks"></div></div>
+        <div class="bar" aria-hidden="true" style="margin-top:22px"><div class="bar-track" id="barTrack"></div><div id="barMarks"></div></div>
         <ul class="prizes" id="prizeList"></ul>
       </div>
     </div>
@@ -606,36 +522,11 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
           <div class="rate"><svg viewBox="0 0 60 70" aria-hidden="true"><use href="#i-elixir"/></svg><span id="rateTxt"></span></div>
         </div>
         <div class="plan-card">
-          <div class="team-fixed">
-            <span class="pigs" aria-hidden="true"><svg viewBox="0 0 64 48"><use href="#i-dino"/></svg><svg viewBox="0 0 64 48"><use href="#i-dino"/></svg><svg viewBox="0 0 64 48"><use href="#i-dino"/></svg><svg viewBox="0 0 64 48"><use href="#i-dino"/></svg></span>
-            <span data-i18n="teamFixed"></span>
-          </div>
           <div class="per">
             <div><span data-i18n="perPts"></span><b id="perPts"></b></div>
             <div><span data-i18n="perElx"></span><b id="perElx"></b></div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOCUS PLANNER ================= -->
-  <section id="focus">
-    <div class="wrap">
-      <div class="sec-head"><h2 data-i18n="focusTitle"></h2><p id="focusDesc"></p></div>
-      <div class="focus">
-        <form class="focus-in" id="focusForm" autocomplete="off" onsubmit="return false">
-          <div class="fields">
-            <div class="field mine wide"><label for="fElx" data-i18n="myElx"></label><input id="fElx" inputmode="numeric" placeholder="0"></div>
-            <div class="field mine wide"><label for="fMe" data-i18n="myScore"></label><input id="fMe" inputmode="numeric" placeholder="0"></div>
-            <div class="field"><label for="fM1" data-i18n-n="1"></label><input id="fM1" inputmode="numeric" placeholder="0"></div>
-            <div class="field"><label for="fM2" data-i18n-n="2"></label><input id="fM2" inputmode="numeric" placeholder="0"></div>
-            <div class="field wide"><label for="fM3" data-i18n-n="3"></label><input id="fM3" inputmode="numeric" placeholder="0"></div>
-          </div>
-          <div class="chips-head"><span id="chipsLbl" data-i18n="defeatedLbl"></span><button type="button" class="clear" id="fClear" data-i18n="clear"></button></div>
-          <div class="chips" id="fDead" role="group" aria-labelledby="chipsLbl"></div>
-        </form>
-        <div class="focus-out" id="fOut" aria-live="polite"></div>
       </div>
     </div>
   </section>
@@ -692,7 +583,7 @@ var SCHEDULE=[
   {d:2, items:[{time:"19:05",ev:"pickFour",tags:[["raid","20K"],["spins","30"],["elixir","300"]]},{time:"20:05",ev:"coinRace",tags:[["spins","25"]]}]},
   {d:3, items:[{time:"15:05",ev:"rapidRush",tags:[["elixir","800"]]},{time:"21:00",ev:"potionRace",tags:[["txt","normalToPotion"]]}]},
   {d:4, items:[{time:"08:00",ev:"shinyTrio",tags:[["spinsTotal",52],["txt","loginCountdown"]]},{time:"15:05",ev:"rapidRush",tags:[["spins","40"]]},{time:"21:05",ev:"elixirPass",tags:[["txt","collectElixir"],["days",3]],note:"freeUnlockNote"},{time:"21:05",ev:"lightningPass",tags:[["elixirOnly"]]},{time:"21:05",ev:"wheelOfFate",tags:[["txt","collectPieces"]]}]},
-  {d:5, items:[{time:"22:05",ev:"rapidRush",tags:[["elixir","800"]]},{time:"24:00",ev:"normalRace",tags:[["txt","potionToNormal"]]}]},
+  {d:5, items:[{time:"22:05",ev:"rapidRush",tags:[["elixir","800"]]},{time:"00:00",ev:"normalRace",tags:[["txt","potionToNormal"]]}]},
   {d:6, items:[{time:"02:00",ev:"adventureRush",tags:[["track","300"]]},{time:"23:50",ev:"warriorArena",tags:[["stages",3],["spins","14"]]}]},
   {d:7, items:[{time:"01:00",ev:"twinFlames",tags:[["elixir","800"]]}]}
 ];
@@ -708,7 +599,7 @@ var I18N={
  s1t:"收集魔藥",s1d:"從通行證、競賽與各種限時活動取得魔藥。",
  s2t:"攻擊恐龍",s2d:"用魔藥下注攻擊，把恐龍的血量打到零。",
  s3t:"推進獎勵條",s3d:"每擊倒一隻恐龍得一面旗，旗幟推進主活動獎勵條。",
- prizeTitle:"主活動獎勵條",prizeDesc:"共 8 個關卡、20 面旗。拖動滑桿，看看擊倒幾隻恐龍能拿到哪些獎勵。",
+ prizeTitle:"主活動獎勵條",prizeDesc:"共 8 個關卡，集滿 20 面旗即可拿到全部獎勵。每擊倒一隻恐龍得一面旗。",
  sliderLabel:"已擊倒恐龍",flags:"旗幟 {f} / 20",hpSoFar:"累計傷害 {hp} 點",unlocked:"已解鎖 {u} / 8 項獎勵",
  level:"第 {n} 關",flagCost:"{c} 面旗",cum:"累計 {t}",lockedA:"未解鎖",unlockedA:"已解鎖",
  spins:"旋轉",tokens:"代幣",
@@ -736,7 +627,7 @@ var I18N={
  s1t:"Collect elixirs",s1d:"Get elixirs from passes, races and other limited-time events.",
  s2t:"Attack dinosaurs",s2d:"Spend elixirs on bets to bring each dinosaur's HP to zero.",
  s3t:"Fill the prize bar",s3d:"Each defeated dinosaur gives one flag, and flags move you along the main prize bar.",
- prizeTitle:"Main event prize bar",prizeDesc:"8 levels, 20 flags in total. Drag the slider to see which prizes a given number of defeated dinosaurs unlocks.",
+ prizeTitle:"Main event prize bar",prizeDesc:"8 levels and 20 flags in total. Each defeated dinosaur gives one flag.",
  sliderLabel:"Dinosaurs defeated",flags:"Flags {f} / 20",hpSoFar:"{hp} damage points",unlocked:"{u} of 8 prizes unlocked",
  level:"Level {n}",flagCost:"{c} flags",cum:"{t} total",lockedA:"Locked",unlockedA:"Unlocked",
  spins:"spins",tokens:"tokens",
@@ -764,7 +655,7 @@ var I18N={
  s1t:"Thu thập thuốc tiên",s1d:"Nhận thuốc tiên từ thẻ thông hành, cuộc đua và các sự kiện giới hạn.",
  s2t:"Tấn công khủng long",s2d:"Dùng thuốc tiên để đặt cược, đánh máu khủng long về 0.",
  s3t:"Lấp đầy thanh thưởng",s3d:"Mỗi con khủng long bị hạ gục cho một lá cờ, giúp bạn tiến trên thanh phần thưởng chính.",
- prizeTitle:"Thanh phần thưởng sự kiện chính",prizeDesc:"8 cấp, tổng cộng 20 lá cờ. Kéo thanh trượt để xem hạ gục bao nhiêu khủng long thì nhận được phần thưởng nào.",
+ prizeTitle:"Thanh phần thưởng sự kiện chính",prizeDesc:"8 cấp, tổng cộng 20 lá cờ. Mỗi con khủng long bị hạ cho một lá cờ.",
  sliderLabel:"Khủng long đã hạ",flags:"Cờ {f} / 20",hpSoFar:"Cần {hp} điểm sát thương",unlocked:"Đã mở {u}/8 phần thưởng",
  level:"Cấp {n}",flagCost:"{c} cờ",cum:"Tổng {t}",lockedA:"Chưa mở",unlockedA:"Đã mở",
  spins:"lượt quay",tokens:"token",
@@ -792,7 +683,7 @@ var I18N={
  s1t:"エリクサーを集める",s1d:"パス、レース、各種期間限定イベントでエリクサーを入手。",
  s2t:"恐竜を攻撃",s2d:"エリクサーでベットして恐竜のHPをゼロにします。",
  s3t:"報酬バーを進める",s3d:"恐竜を1体倒すごとに旗1本。旗でメイン報酬バーが進みます。",
- prizeTitle:"メインイベント報酬バー",prizeDesc:"全8段階、旗は合計20本。スライダーを動かして、倒した恐竜の数で獲得できる報酬を確認しましょう。",
+ prizeTitle:"メインイベント報酬バー",prizeDesc:"全8段階、旗は合計20本。恐竜を1体倒すごとに旗が1本もらえます。",
  sliderLabel:"倒した恐竜",flags:"旗 {f} / 20",hpSoFar:"必要ダメージ {hp}",unlocked:"報酬 {u}/8 獲得",
  level:"レベル {n}",flagCost:"旗 {c} 本",cum:"累計 {t}",lockedA:"未獲得",unlockedA:"獲得済み",
  spins:"スピン",tokens:"トークン",
@@ -820,7 +711,7 @@ var I18N={
  s1t:"엘릭서 모으기",s1d:"패스, 레이스, 각종 기간 한정 이벤트에서 엘릭서를 얻습니다.",
  s2t:"공룡 공격",s2d:"엘릭서로 베팅해 공룡의 체력을 0으로 만듭니다.",
  s3t:"보상 바 채우기",s3d:"공룡을 쓰러뜨릴 때마다 깃발 1개, 깃발로 메인 보상 바가 진행됩니다.",
- prizeTitle:"메인 이벤트 보상 바",prizeDesc:"총 8단계, 깃발 20개가 필요합니다. 슬라이더를 움직여 공룡을 몇 마리 쓰러뜨리면 어떤 보상을 받는지 확인하세요.",
+ prizeTitle:"메인 이벤트 보상 바",prizeDesc:"총 8단계, 깃발 20개. 공룡을 1마리 쓰러뜨릴 때마다 깃발 1개를 얻습니다.",
  sliderLabel:"쓰러뜨린 공룡",flags:"깃발 {f} / 20",hpSoFar:"필요 피해량 {hp}",unlocked:"보상 {u}/8 획득",
  level:"레벨 {n}",flagCost:"깃발 {c}개",cum:"누적 {t}",lockedA:"잠김",unlockedA:"획득",
  spins:"스핀",tokens:"토큰",
@@ -848,7 +739,7 @@ var I18N={
  s1t:"สะสมยาวิเศษ",s1d:"รับยาวิเศษจากบัตรผ่าน การแข่ง และอีเวนต์จำกัดเวลาต่าง ๆ",
  s2t:"โจมตีไดโนเสาร์",s2d:"ใช้ยาวิเศษวางเดิมพันเพื่อลดพลังชีวิตไดโนเสาร์ให้เหลือศูนย์",
  s3t:"เติมแถบรางวัล",s3d:"ล้มไดโนเสาร์ 1 ตัวได้ธง 1 ผืน ธงจะพาคุณเดินหน้าบนแถบรางวัลหลัก",
- prizeTitle:"แถบรางวัลอีเวนต์หลัก",prizeDesc:"8 ระดับ ใช้ธงทั้งหมด 20 ผืน เลื่อนแถบเพื่อดูว่าล้มไดโนเสาร์กี่ตัวแล้วได้รางวัลอะไร",
+ prizeTitle:"แถบรางวัลอีเวนต์หลัก",prizeDesc:"8 ระดับ ใช้ธงทั้งหมด 20 ผืน ล้มไดโนเสาร์ 1 ตัวได้ธง 1 ผืน",
  sliderLabel:"ไดโนเสาร์ที่ล้มแล้ว",flags:"ธง {f} / 20",hpSoFar:"ต้องใช้ความเสียหาย {hp} แต้ม",unlocked:"ปลดล็อก {u}/8 รางวัล",
  level:"ระดับ {n}",flagCost:"ธง {c} ผืน",cum:"รวม {t}",lockedA:"ยังไม่ปลดล็อก",unlockedA:"ปลดล็อกแล้ว",
  spins:"สปิน",tokens:"โทเค็น",
@@ -876,7 +767,7 @@ var I18N={
  s1t:"Kumpulkan elixir",s1d:"Dapatkan elixir dari pass, balapan, dan event terbatas lainnya.",
  s2t:"Serang dinosaurus",s2d:"Gunakan elixir untuk bertaruh hingga HP dinosaurus habis.",
  s3t:"Isi bar hadiah",s3d:"Setiap dinosaurus yang kalah memberi satu bendera untuk memajukan bar hadiah utama.",
- prizeTitle:"Bar hadiah event utama",prizeDesc:"8 level, total 20 bendera. Geser slider untuk melihat hadiah yang terbuka dari jumlah dinosaurus yang dikalahkan.",
+ prizeTitle:"Bar hadiah event utama",prizeDesc:"8 level, total 20 bendera. Setiap dinosaurus yang kalah memberi satu bendera.",
  sliderLabel:"Dinosaurus dikalahkan",flags:"Bendera {f} / 20",hpSoFar:"Butuh {hp} poin damage",unlocked:"{u} dari 8 hadiah terbuka",
  level:"Level {n}",flagCost:"{c} bendera",cum:"Total {t}",lockedA:"Terkunci",unlockedA:"Terbuka",
  spins:"spin",tokens:"token",
@@ -904,7 +795,7 @@ var I18N={
  s1t:"Reúne elixires",s1d:"Consíguelos en pases, carreras y otros eventos por tiempo limitado.",
  s2t:"Ataca dinosaurios",s2d:"Apuesta elixires hasta dejar la vida del dinosaurio en cero.",
  s3t:"Llena la barra de premios",s3d:"Cada dinosaurio derrotado da una bandera que avanza la barra de premios principal.",
- prizeTitle:"Barra de premios del evento",prizeDesc:"8 niveles, 20 banderas en total. Mueve el control para ver qué premios desbloqueas según los dinosaurios derrotados.",
+ prizeTitle:"Barra de premios del evento",prizeDesc:"8 niveles y 20 banderas en total. Cada dinosaurio derrotado da una bandera.",
  sliderLabel:"Dinosaurios derrotados",flags:"Banderas {f} / 20",hpSoFar:"{hp} puntos de daño necesarios",unlocked:"{u} de 8 premios desbloqueados",
  level:"Nivel {n}",flagCost:"{c} banderas",cum:"Total {t}",lockedA:"Bloqueado",unlockedA:"Desbloqueado",
  spins:"tiradas",tokens:"fichas",
@@ -932,7 +823,7 @@ var I18N={
  s1t:"Junte elixires",s1d:"Ganhe elixires em passes, corridas e outros eventos por tempo limitado.",
  s2t:"Ataque dinossauros",s2d:"Aposte elixires até zerar a vida do dinossauro.",
  s3t:"Encha a barra de prêmios",s3d:"Cada dinossauro derrotado dá uma bandeira que avança a barra de prêmios principal.",
- prizeTitle:"Barra de prêmios do evento",prizeDesc:"8 níveis, 20 bandeiras no total. Arraste o controle para ver quais prêmios você libera conforme os dinossauros derrotados.",
+ prizeTitle:"Barra de prêmios do evento",prizeDesc:"8 níveis e 20 bandeiras no total. Cada dinossauro derrotado vale uma bandeira.",
  sliderLabel:"Dinossauros derrotados",flags:"Bandeiras {f} / 20",hpSoFar:"{hp} pontos de dano necessários",unlocked:"{u} de 8 prêmios liberados",
  level:"Nível {n}",flagCost:"{c} bandeiras",cum:"Total {t}",lockedA:"Bloqueado",unlockedA:"Liberado",
  spins:"giros",tokens:"fichas",
@@ -953,159 +844,33 @@ var I18N={
 }
 };
 
-/* ---------------- i18n: focus planner + time zones ---------------- */
+/* ---------------- i18n: time zones ---------------- */
 var EXTRA={
 "zh-Hant":{
- navFocus:"攻擊建議",teamFixed:"隊伍固定 4 人",
- focusTitle:"集中攻擊建議",
- focusDesc:"隊伍固定 4 人，每人的期望分數是總血量的 1/4（{share} 點）。輸入你的魔藥與全隊分數，並點選已擊倒的恐龍。每隻恐龍不論血量都只給一面旗，所以先打剩下血量最低的那隻，同樣的魔藥能換到最多旗。",
- myElx:"我的魔藥",myScore:"我的目前分數",mate:"隊友 {n} 分數",defeatedLbl:"已擊倒的恐龍（點選標記）",clear:"清除重填",
- focusFirst:"先集中攻擊",firstWhy:"剩下的恐龍中血量最低：{hp} 點，約需 {e} 魔藥（{lo}–{hi}）。",
- allDone:"20 隻恐龍都已擊倒，主獎到手！",
- myPlanT:"你的魔藥打得掉哪些",myDmg:"預估傷害 {e} 點（{lo}–{hi}）",killsRange:"保守 {a} 隻，期望 {b} 隻，樂觀 {c} 隻",
- noElx:"輸入魔藥數量就能看到建議順序。",noKill:"這些魔藥還不夠擊倒任何一隻，可以先打{d}（約完成 {p}%）。",leftover:"剩下約 {e} 點可以先打{d}（約 {p}%）。",
- teamT:"隊伍分數與期望值",me:"我",mateShort:"隊友 {n}",ofShare:"{s} 點，期望值的 {p}%",teamTotal:"全隊分數 {s} / {t}",
- scattered:"約 {s} 點傷害打在還沒倒下的恐龍上。全隊集中打同一隻，旗子會來得更快。",
- mismatch:"已擊倒恐龍的血量比全隊分數還高，請確認分數或勾選。",
- outlookT:"旗幟預估",nowF:"目前",afterMe:"用完你的魔藥",afterTeam:"隊友也達到期望值",
- nextPrize:"下一個獎勵：第 {l} 關 {p}，還差 {k} 面旗。",
- assume:"估算以每 1,000 魔藥約 35,000 點計（30,000–40,000），並假設還沒倒下的恐龍都是滿血。",
  tzName:"台灣時間",tzTpl:"時間為{z}（{o}）",tzSrc:"",nextDay:"下{d}"
 },
 "en":{
- navFocus:"Focus plan",teamFixed:"Team of 4 (fixed)",
- focusTitle:"Which dinosaur to focus",
- focusDesc:"Teams are always 4 players, so each player's expected share is 1/4 of the total HP ({share} points). Enter your elixirs and the team's scores, then mark the dinosaurs already defeated. Every dinosaur gives one flag no matter its HP, so hitting the lowest-HP dinosaur left gets the most flags from the same elixirs.",
- myElx:"My elixirs",myScore:"My current score",mate:"Teammate {n} score",defeatedLbl:"Defeated dinosaurs (tap to mark)",clear:"Clear all",
- focusFirst:"Focus on first",firstWhy:"Lowest HP left: {hp} points, about {e} elixirs ({lo}–{hi}).",
- allDone:"All 20 dinosaurs defeated. The grand prize is yours!",
- myPlanT:"What your elixirs can defeat",myDmg:"Expected damage {e} points ({lo}–{hi})",killsRange:"Low {a}, expected {b}, high {c} dinosaurs",
- noElx:"Enter your elixirs to see the suggested order.",noKill:"Not enough to defeat one yet. Put it into {d} (about {p}% done).",leftover:"About {e} points left over for {d} (about {p}%).",
- teamT:"Team scores vs. expected share",me:"Me",mateShort:"Teammate {n}",ofShare:"{s} points, {p}% of expected",teamTotal:"Team score {s} / {t}",
- scattered:"About {s} points of damage sit on dinosaurs that are still standing. Have the whole team hit the same one to earn flags faster.",
- mismatch:"The defeated dinosaurs add up to more HP than the team's score. Check the scores or the marked dinosaurs.",
- outlookT:"Flag outlook",nowF:"Now",afterMe:"After your elixirs",afterTeam:"Teammates reach expected share",
- nextPrize:"Next prize: level {l}, {p}. {k} flags to go.",
- assume:"Estimates use about 35,000 points per 1,000 elixirs (30,000–40,000) and assume dinosaurs still standing have full HP.",
  tzName:"US Eastern Time",tzTpl:"Times shown in {z} ({o})",tzSrc:"Converted from Taiwan time (UTC+8).",nextDay:"Next {d}"
 },
 "vi":{
- navFocus:"Gợi ý tấn công",teamFixed:"Đội cố định 4 người",
- focusTitle:"Nên tập trung đánh con nào",
- focusDesc:"Đội luôn có 4 người, phần kỳ vọng của mỗi người là 1/4 tổng máu ({share} điểm). Nhập số thuốc tiên của bạn và điểm của cả đội, rồi đánh dấu khủng long đã hạ. Mỗi con khủng long chỉ cho một lá cờ bất kể máu nhiều hay ít, nên đánh con còn ít máu nhất trước sẽ được nhiều cờ nhất với cùng số thuốc tiên.",
- myElx:"Thuốc tiên của tôi",myScore:"Điểm hiện tại của tôi",mate:"Điểm đồng đội {n}",defeatedLbl:"Khủng long đã hạ (chạm để đánh dấu)",clear:"Xóa hết",
- focusFirst:"Tập trung đánh trước",firstWhy:"Máu thấp nhất còn lại: {hp} điểm, cần khoảng {e} thuốc tiên ({lo}–{hi}).",
- allDone:"Đã hạ đủ 20 con khủng long, giải chính về tay!",
- myPlanT:"Thuốc tiên của bạn hạ được những con nào",myDmg:"Sát thương dự kiến {e} điểm ({lo}–{hi})",killsRange:"Thấp {a}, kỳ vọng {b}, cao {c} con",
- noElx:"Nhập số thuốc tiên để xem thứ tự gợi ý.",noKill:"Chưa đủ hạ con nào. Hãy dồn vào {d} (được khoảng {p}%).",leftover:"Còn khoảng {e} điểm để đánh {d} (khoảng {p}%).",
- teamT:"Điểm đội so với phần kỳ vọng",me:"Tôi",mateShort:"Đồng đội {n}",ofShare:"{s} điểm, {p}% kỳ vọng",teamTotal:"Điểm đội {s} / {t}",
- scattered:"Khoảng {s} điểm sát thương đang nằm trên các con chưa bị hạ. Cả đội dồn vào cùng một con sẽ có cờ nhanh hơn.",
- mismatch:"Tổng máu khủng long đã hạ cao hơn điểm cả đội. Hãy kiểm tra lại điểm hoặc các con đã đánh dấu.",
- outlookT:"Dự báo cờ",nowF:"Hiện tại",afterMe:"Sau khi dùng hết thuốc tiên",afterTeam:"Đồng đội đạt phần kỳ vọng",
- nextPrize:"Phần thưởng tiếp theo: cấp {l}, {p}. Còn {k} cờ.",
- assume:"Ước tính theo khoảng 35.000 điểm cho mỗi 1.000 thuốc tiên (30.000–40.000) và giả định khủng long chưa hạ còn đầy máu.",
  tzName:"giờ Việt Nam",tzTpl:"Giờ hiển thị theo {z} ({o})",tzSrc:"Quy đổi từ giờ Đài Loan (UTC+8).",nextDay:"{d} tuần sau"
 },
 "ja":{
- navFocus:"攻撃プラン",teamFixed:"チームは4人固定",
- focusTitle:"どの恐竜に集中するか",
- focusDesc:"チームは常に4人で、1人あたりの期待スコアは合計HPの1/4（{share}pt）です。手持ちのエリクサーとチーム全員のスコアを入力し、倒した恐竜をタップしてください。恐竜はHPに関係なく1体につき旗1本なので、残りの中でHPが最も低い恐竜から倒すと、同じエリクサーで最も多くの旗が取れます。",
- myElx:"手持ちエリクサー",myScore:"自分の現在スコア",mate:"チームメイト{n}のスコア",defeatedLbl:"倒した恐竜（タップで切り替え）",clear:"すべてクリア",
- focusFirst:"まず集中攻撃",firstWhy:"残りで最もHPが低い：{hp}pt、エリクサー約{e}（{lo}〜{hi}）。",
- allDone:"恐竜20体すべて撃破、メイン賞品獲得！",
- myPlanT:"手持ちで倒せる恐竜",myDmg:"予想ダメージ {e}pt（{lo}〜{hi}）",killsRange:"控えめ{a}体、期待値{b}体、楽観{c}体",
- noElx:"エリクサー数を入力するとおすすめの順番が表示されます。",noKill:"まだ1体も倒せません。{d}に集中すると約{p}%削れます。",leftover:"残り約{e}ptで{d}を約{p}%削れます。",
- teamT:"チームスコアと期待値",me:"自分",mateShort:"チームメイト{n}",ofShare:"{s}pt、期待値の{p}%",teamTotal:"チーム合計 {s} / {t}",
- scattered:"約{s}ptのダメージがまだ倒れていない恐竜に分散しています。全員で同じ恐竜を狙うと旗が早く取れます。",
- mismatch:"倒した恐竜のHP合計がチームスコアを上回っています。スコアかチェックを確認してください。",
- outlookT:"旗の見通し",nowF:"現在",afterMe:"手持ちを使い切った後",afterTeam:"チームメイトも期待値に到達",
- nextPrize:"次の報酬：レベル{l} {p}（あと旗{k}本）",
- assume:"エリクサー1,000 ≈ 35,000pt（30,000〜40,000）で計算し、未撃破の恐竜はHP満タンとみなしています。",
  tzName:"日本時間",tzTpl:"時刻は{z}（{o}）で表示",tzSrc:"台湾時間（UTC+8）から換算しています。",nextDay:"翌週の{d}"
 },
 "ko":{
- navFocus:"공격 추천",teamFixed:"팀 4명 고정",
- focusTitle:"어떤 공룡에 집중할까",
- focusDesc:"팀은 항상 4명이며 1인당 기대 점수는 총 체력의 1/4({share}점)입니다. 내 엘릭서와 팀 점수를 입력하고 이미 쓰러뜨린 공룡을 표시하세요. 공룡은 체력과 관계없이 1마리당 깃발 1개이므로, 남은 공룡 중 체력이 가장 낮은 것부터 잡아야 같은 엘릭서로 가장 많은 깃발을 얻습니다.",
- myElx:"내 엘릭서",myScore:"내 현재 점수",mate:"팀원 {n} 점수",defeatedLbl:"쓰러뜨린 공룡 (탭하여 표시)",clear:"모두 지우기",
- focusFirst:"먼저 집중 공격",firstWhy:"남은 공룡 중 체력 최저: {hp}점, 엘릭서 약 {e}개 ({lo}~{hi}).",
- allDone:"공룡 20마리 모두 처치, 메인 보상 획득!",
- myPlanT:"내 엘릭서로 잡을 수 있는 공룡",myDmg:"예상 피해량 {e}점 ({lo}~{hi})",killsRange:"보수적 {a}마리, 기대 {b}마리, 낙관 {c}마리",
- noElx:"엘릭서 수를 입력하면 추천 순서가 표시됩니다.",noKill:"아직 한 마리도 못 잡습니다. {d}에 넣으면 약 {p}% 진행됩니다.",leftover:"남은 약 {e}점으로 {d}를 약 {p}% 진행할 수 있습니다.",
- teamT:"팀 점수와 기대치",me:"나",mateShort:"팀원 {n}",ofShare:"{s}점, 기대치의 {p}%",teamTotal:"팀 합계 {s} / {t}",
- scattered:"약 {s}점의 피해가 아직 살아 있는 공룡에 흩어져 있습니다. 팀 전체가 같은 공룡을 치면 깃발을 더 빨리 얻습니다.",
- mismatch:"쓰러뜨린 공룡의 체력 합계가 팀 점수보다 높습니다. 점수나 표시를 확인하세요.",
- outlookT:"깃발 전망",nowF:"현재",afterMe:"내 엘릭서 사용 후",afterTeam:"팀원도 기대치 도달",
- nextPrize:"다음 보상: 레벨 {l} {p}, 깃발 {k}개 남음.",
- assume:"엘릭서 1,000개당 약 35,000점(30,000~40,000)으로 계산하며, 살아 있는 공룡은 체력이 가득 찬 것으로 가정합니다.",
  tzName:"한국 시간",tzTpl:"{z} 기준 ({o})",tzSrc:"대만 시간(UTC+8)에서 변환했습니다.",nextDay:"다음 주 {d}"
 },
 "th":{
- navFocus:"แผนโจมตี",teamFixed:"ทีม 4 คน (คงที่)",
- focusTitle:"ควรรุมตีไดโนเสาร์ตัวไหน",
- focusDesc:"ทีมมี 4 คนเสมอ ส่วนที่คาดหวังของแต่ละคนคือ 1/4 ของพลังชีวิตรวม ({share} แต้ม) ใส่จำนวนยาวิเศษของคุณและคะแนนของทั้งทีม แล้วแตะเลือกไดโนเสาร์ที่ล้มแล้ว ไดโนเสาร์ทุกตัวให้ธง 1 ผืนเท่ากันไม่ว่าพลังชีวิตจะเท่าไร การตีตัวที่พลังชีวิตน้อยที่สุดก่อนจึงได้ธงมากที่สุดจากยาวิเศษเท่าเดิม",
- myElx:"ยาวิเศษของฉัน",myScore:"คะแนนปัจจุบันของฉัน",mate:"คะแนนเพื่อนร่วมทีม {n}",defeatedLbl:"ไดโนเสาร์ที่ล้มแล้ว (แตะเพื่อเลือก)",clear:"ล้างทั้งหมด",
- focusFirst:"ตีตัวนี้ก่อน",firstWhy:"พลังชีวิตต่ำสุดที่เหลือ: {hp} แต้ม ใช้ยาวิเศษประมาณ {e} ({lo}–{hi})",
- allDone:"ล้มไดโนเสาร์ครบ 20 ตัวแล้ว รับรางวัลใหญ่ได้เลย!",
- myPlanT:"ยาวิเศษของคุณล้มได้ตัวไหนบ้าง",myDmg:"ความเสียหายที่คาด {e} แต้ม ({lo}–{hi})",killsRange:"ต่ำสุด {a} ตัว คาดหวัง {b} ตัว สูงสุด {c} ตัว",
- noElx:"ใส่จำนวนยาวิเศษเพื่อดูลำดับที่แนะนำ",noKill:"ยังไม่พอล้มสักตัว ตี{d}ไปก่อน (ได้ประมาณ {p}%)",leftover:"เหลือประมาณ {e} แต้ม ตี{d}ได้ประมาณ {p}%",
- teamT:"คะแนนทีมเทียบกับส่วนที่คาดหวัง",me:"ฉัน",mateShort:"เพื่อน {n}",ofShare:"{s} แต้ม {p}% ของที่คาดหวัง",teamTotal:"คะแนนทีม {s} / {t}",
- scattered:"มีความเสียหายประมาณ {s} แต้มกระจายอยู่บนไดโนเสาร์ที่ยังไม่ล้ม ให้ทั้งทีมรุมตีตัวเดียวกันจะได้ธงเร็วขึ้น",
- mismatch:"พลังชีวิตรวมของไดโนเสาร์ที่ล้มแล้วสูงกว่าคะแนนทีม โปรดตรวจคะแนนหรือตัวที่เลือก",
- outlookT:"คาดการณ์ธง",nowF:"ตอนนี้",afterMe:"หลังใช้ยาวิเศษของคุณ",afterTeam:"เพื่อนร่วมทีมทำได้ตามที่คาด",
- nextPrize:"รางวัลถัดไป: ระดับ {l} {p} อีก {k} ธง",
- assume:"คำนวณที่ประมาณ 35,000 แต้มต่อยาวิเศษ 1,000 (30,000–40,000) และถือว่าไดโนเสาร์ที่ยังไม่ล้มมีพลังชีวิตเต็ม",
  tzName:"เวลาประเทศไทย",tzTpl:"แสดงเวลาตาม{z} ({o})",tzSrc:"แปลงจากเวลาไต้หวัน (UTC+8)",nextDay:"{d}ถัดไป"
 },
 "id":{
- navFocus:"Saran serangan",teamFixed:"Tim tetap 4 orang",
- focusTitle:"Dinosaurus mana yang difokuskan",
- focusDesc:"Tim selalu 4 orang, jadi bagian yang diharapkan tiap pemain adalah 1/4 dari total HP ({share} poin). Masukkan elixir Anda dan skor tim, lalu tandai dinosaurus yang sudah kalah. Setiap dinosaurus memberi satu bendera berapa pun HP-nya, jadi menyerang dinosaurus dengan HP terendah lebih dulu memberi bendera terbanyak dari elixir yang sama.",
- myElx:"Elixir saya",myScore:"Skor saya saat ini",mate:"Skor rekan {n}",defeatedLbl:"Dinosaurus yang sudah kalah (ketuk untuk menandai)",clear:"Hapus semua",
- focusFirst:"Fokus serang dulu",firstWhy:"HP terendah yang tersisa: {hp} poin, sekitar {e} elixir ({lo}–{hi}).",
- allDone:"Semua 20 dinosaurus kalah, hadiah utama didapat!",
- myPlanT:"Yang bisa dikalahkan dengan elixir Anda",myDmg:"Perkiraan damage {e} poin ({lo}–{hi})",killsRange:"Rendah {a}, harapan {b}, tinggi {c} dinosaurus",
- noElx:"Masukkan jumlah elixir untuk melihat urutan yang disarankan.",noKill:"Belum cukup untuk mengalahkan satu. Fokuskan ke {d} (sekitar {p}% selesai).",leftover:"Sisa sekitar {e} poin untuk {d} (sekitar {p}%).",
- teamT:"Skor tim vs bagian yang diharapkan",me:"Saya",mateShort:"Rekan {n}",ofShare:"{s} poin, {p}% dari harapan",teamTotal:"Skor tim {s} / {t}",
- scattered:"Sekitar {s} poin damage ada di dinosaurus yang belum kalah. Serang bersama satu dinosaurus agar bendera lebih cepat didapat.",
- mismatch:"Total HP dinosaurus yang kalah melebihi skor tim. Periksa skor atau tandanya.",
- outlookT:"Perkiraan bendera",nowF:"Sekarang",afterMe:"Setelah elixir Anda",afterTeam:"Rekan mencapai bagian harapan",
- nextPrize:"Hadiah berikutnya: level {l}, {p}. Kurang {k} bendera.",
- assume:"Perkiraan memakai sekitar 35.000 poin per 1.000 elixir (30.000–40.000) dan menganggap dinosaurus yang belum kalah ber-HP penuh.",
  tzName:"WIB (Jakarta)",tzTpl:"Waktu ditampilkan dalam {z} ({o})",tzSrc:"Dikonversi dari waktu Taiwan (UTC+8).",nextDay:"{d} berikutnya"
 },
 "es":{
- navFocus:"Plan de ataque",teamFixed:"Equipo fijo de 4",
- focusTitle:"A qué dinosaurio atacar primero",
- focusDesc:"Los equipos son siempre de 4, así que la parte esperada de cada jugador es 1/4 de la vida total ({share} puntos). Introduce tus elixires y las puntuaciones del equipo, y marca los dinosaurios ya derrotados. Cada dinosaurio da una bandera sin importar su vida, así que atacar primero al que tenga menos vida te da más banderas con los mismos elixires.",
- myElx:"Mis elixires",myScore:"Mi puntuación actual",mate:"Puntuación del compañero {n}",defeatedLbl:"Dinosaurios derrotados (toca para marcar)",clear:"Borrar todo",
- focusFirst:"Ataca primero",firstWhy:"El de menos vida: {hp} puntos, unos {e} elixires ({lo}–{hi}).",
- allDone:"¡Los 20 dinosaurios derrotados, premio principal conseguido!",
- myPlanT:"Lo que derrotan tus elixires",myDmg:"Daño esperado {e} puntos ({lo}–{hi})",killsRange:"Mínimo {a}, esperado {b}, máximo {c} dinosaurios",
- noElx:"Introduce tus elixires para ver el orden sugerido.",noKill:"Aún no alcanza para derrotar a uno. Úsalo en {d} (≈{p}% hecho).",leftover:"Sobran unos {e} puntos para {d} (≈{p}%).",
- teamT:"Puntuaciones frente a la parte esperada",me:"Yo",mateShort:"Compañero {n}",ofShare:"{s} puntos, {p}% de lo esperado",teamTotal:"Equipo {s} / {t}",
- scattered:"Unos {s} puntos de daño están en dinosaurios que siguen en pie. Si todo el equipo ataca al mismo, conseguiréis banderas antes.",
- mismatch:"La vida de los dinosaurios marcados supera la puntuación del equipo. Revisa las puntuaciones o las marcas.",
- outlookT:"Previsión de banderas",nowF:"Ahora",afterMe:"Tras tus elixires",afterTeam:"Compañeros llegan a su parte",
- nextPrize:"Siguiente premio: nivel {l}, {p}. Faltan {k} banderas.",
- assume:"Se calcula con unos 35 000 puntos por cada 1000 elixires (30 000–40 000) y se supone que los dinosaurios en pie tienen la vida completa.",
  tzName:"hora del centro de México",tzTpl:"Horas en {z} ({o})",tzSrc:"Convertidas desde la hora de Taiwán (UTC+8).",nextDay:"{d} siguiente"
 },
 "pt":{
- navFocus:"Plano de ataque",teamFixed:"Equipe fixa de 4",
- focusTitle:"Qual dinossauro atacar primeiro",
- focusDesc:"As equipes são sempre de 4, então a parte esperada de cada jogador é 1/4 da vida total ({share} pontos). Informe seus elixires e as pontuações da equipe e marque os dinossauros já derrotados. Cada dinossauro dá uma bandeira, não importa a vida, então atacar primeiro o de menor vida rende mais bandeiras com os mesmos elixires.",
- myElx:"Meus elixires",myScore:"Minha pontuação atual",mate:"Pontuação do colega {n}",defeatedLbl:"Dinossauros derrotados (toque para marcar)",clear:"Limpar tudo",
- focusFirst:"Ataque primeiro",firstWhy:"Menor vida restante: {hp} pontos, cerca de {e} elixires ({lo}–{hi}).",
- allDone:"Os 20 dinossauros derrotados, prêmio principal garantido!",
- myPlanT:"O que seus elixires derrotam",myDmg:"Dano esperado {e} pontos ({lo}–{hi})",killsRange:"Mínimo {a}, esperado {b}, máximo {c} dinossauros",
- noElx:"Informe seus elixires para ver a ordem sugerida.",noKill:"Ainda não dá para derrotar um. Use em {d} (cerca de {p}% feito).",leftover:"Sobram cerca de {e} pontos para {d} (cerca de {p}%).",
- teamT:"Pontuações x parte esperada",me:"Eu",mateShort:"Colega {n}",ofShare:"{s} pontos, {p}% do esperado",teamTotal:"Equipe {s} / {t}",
- scattered:"Cerca de {s} pontos de dano estão em dinossauros ainda de pé. Com a equipe toda no mesmo, as bandeiras vêm mais rápido.",
- mismatch:"A vida dos dinossauros marcados passa da pontuação da equipe. Confira as pontuações ou as marcações.",
- outlookT:"Previsão de bandeiras",nowF:"Agora",afterMe:"Após seus elixires",afterTeam:"Colegas atingem a parte esperada",
- nextPrize:"Próximo prêmio: nível {l}, {p}. Faltam {k} bandeiras.",
- assume:"Cálculo com cerca de 35.000 pontos por 1.000 elixires (30.000–40.000), supondo vida cheia nos dinossauros ainda de pé.",
  tzName:"horário de Brasília",tzTpl:"Horários em {z} ({o})",tzSrc:"Convertidos do horário de Taiwan (UTC+8).",nextDay:"{d} seguinte"
 }
 };
@@ -1138,9 +903,7 @@ function pickLang(){
 function renderStatic(){
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-i18n]").forEach(function(el){el.textContent=T(el.getAttribute("data-i18n"));});
-  document.querySelectorAll("[data-i18n-n]").forEach(function(el){el.textContent=T("mate",{n:el.getAttribute("data-i18n-n")});});
-  $("focusDesc").textContent=T("focusDesc",{share:N(TOTAL/4)});
-  document.title=T("title")+(lang==="en"?"":" · Lost Explorers")+"｜大佬群CSL製作";
+  document.title=T("title");
 }
 
 function prizeDetail(p){
@@ -1161,7 +924,7 @@ function renderPrizes(){
       '<div class="prize-top"><span class="lvl" aria-label="'+esc(T("level",{n:i+1}))+'">'+(i+1)+'</span>'+
       '<span class="cost">'+ico("i-flag","0 0 60 60")+'<span>'+esc(T("flagCost",{c:p.cost}))+'<small>'+esc(T("cum",{t:cum}))+'</small></span></span></div>'+
       '<div class="prize-art">'+ico(p.icon,p.vb)+'</div>'+
-      '<div class="prize-txt"><h3>'+esc(T(p.name))+'</h3><p>'+esc(prizeDetail(p))+'</p><span class="state"></span></div></li>';
+      '<div class="prize-txt"><h3>'+esc(T(p.name))+'</h3><p>'+esc(prizeDetail(p))+'</p></div></li>';
     marks+='<span class="bar-mark" data-c="'+cum+'" style="left:'+(cum/20*100)+'%"><span>'+(i+1)+'</span></span>';
   });
   $("prizeList").innerHTML=html;
@@ -1172,21 +935,8 @@ function renderPrizes(){
 }
 
 function updateTrail(){
-  var k=+$("kills").value;
-  $("killsOut").textContent=k;
-  $("kills").style.setProperty("--p",(k/20*100)+"%");
-  var hp=0;for(var i=0;i<k;i++)hp+=DINO_HP[i];
-  var u=0;
-  document.querySelectorAll("#prizeList .prize").forEach(function(li){
-    var p=PRIZES[+li.getAttribute("data-i")],on=k>=p.cum;if(on)u++;
-    li.classList.toggle("unlocked",on);li.classList.toggle("locked",!on);
-    li.querySelector(".state").innerHTML=ico(on?"i-check":"i-lock")+esc(T(on?"unlockedA":"lockedA"));
-  });
-  document.querySelectorAll("#barTrack i").forEach(function(seg,i){seg.classList.toggle("on",i<k);});
-  document.querySelectorAll("#barMarks .bar-mark").forEach(function(m){m.classList.toggle("on",k>=+m.getAttribute("data-c"));});
-  $("flagsTxt").innerHTML="<strong>"+esc(T("flags",{f:k}))+"</strong>";
-  $("hpTxt").textContent=T("hpSoFar",{hp:N(hp)});
-  $("unlockTxt").textContent=T("unlocked",{u:u});
+  document.querySelectorAll("#barTrack i").forEach(function(seg){seg.classList.add("on");});
+  document.querySelectorAll("#barMarks .bar-mark").forEach(function(m){m.classList.add("on");});
 }
 
 function renderDinos(){
@@ -1210,97 +960,6 @@ function renderPlan(){
   $("perPts").textContent=N(Math.round(per));
   var lo=Math.round(per/PTS_HI/100)*100, hi=Math.round(per/PTS_LO/100)*100;
   $("perElx").textContent=N(lo)+"–"+N(hi);
-}
-
-/* ---------------- focus planner ---------------- */
-var FKEY="cm-lost-focus", FIELDS=["fElx","fMe","fM1","fM2","fM3"];
-var fstate={dead:[]};
-try{var saved=JSON.parse(localStorage.getItem(FKEY)||"null");if(saved&&Array.isArray(saved.dead))fstate=saved;}catch(e){}
-function saveFocus(){try{localStorage.setItem(FKEY,JSON.stringify(fstate));}catch(e){}}
-function num(v){v=String(v==null?"":v).replace(/[^\d]/g,"");return v?Math.min(+v,1e9):0;}
-function kfmt(n){return n>=1000?(n/1000).toLocaleString("en",{maximumFractionDigits:1})+"K":String(n);}
-function unlockedAt(flags){var c=0;for(var i=0;i<PRIZES.length;i++){c+=PRIZES[i].cost;if(flags<c)return {next:i,need:c-flags};}return null;}
-
-function greedy(alive,dmg){
-  var used=0,kills=[];
-  for(var j=0;j<alive.length;j++){if(used+alive[j].hp<=dmg){used+=alive[j].hp;kills.push(alive[j]);}else break;}
-  return {kills:kills,left:dmg-used,next:alive[kills.length]||null};
-}
-
-function renderChips(best){
-  var html="";
-  DINO_HP.forEach(function(hp,i){
-    var on=fstate.dead.indexOf(i)>=0;
-    html+='<button type="button" class="chip'+(best===i?" best":"")+'" data-i="'+i+'" aria-pressed="'+on+'" aria-label="'+esc(T("dino",{n:i+1})+", "+N(hp)+" "+T("pts"))+'"><b>'+(i+1)+'</b><small>'+kfmt(hp)+'</small></button>';
-  });
-  $("fDead").innerHTML=html;
-}
-
-function renderFocus(){
-  FIELDS.forEach(function(id){var el=$(id);if(document.activeElement!==el)el.value=fstate[id]||"";});
-  var dead=fstate.dead;
-  var alive=DINO_HP.map(function(hp,i){return {i:i,hp:hp};}).filter(function(x){return dead.indexOf(x.i)<0;}).sort(function(a,b){return a.hp-b.hp||a.i-b.i;});
-  var E=num(fstate.fElx), exp=E*PTS_PER_ELX, lo=E*PTS_LO, hi=E*PTS_HI;
-  var me=num(fstate.fMe), mates=[num(fstate.fM1),num(fstate.fM2),num(fstate.fM3)];
-  var share=TOTAL/TEAM, teamScore=me+mates[0]+mates[1]+mates[2];
-  var deadHP=dead.reduce(function(a,i){return a+DINO_HP[i];},0);
-  var dn=function(x){return T("dino",{n:x.i+1});};
-  var out="";
-
-  // 1. first target
-  if(!alive.length){
-    out+='<div class="fcard f-first"><div class="f-target">'+ico("i-flag","0 0 60 60")+esc(T("allDone"))+'</div></div>';
-  }else{
-    var f=alive[0];
-    out+='<div class="fcard f-first"><span class="lbl">'+esc(T("focusFirst"))+'</span>'+
-      '<div class="f-target">'+ico("i-dino","0 0 64 48")+esc(dn(f))+'</div>'+
-      '<p>'+esc(T("firstWhy",{hp:N(f.hp),e:N(Math.round(f.hp/PTS_PER_ELX)),lo:N(Math.round(f.hp/PTS_HI)),hi:N(Math.round(f.hp/PTS_LO))}))+'</p></div>';
-  }
-
-  // 2. what my elixirs can defeat
-  var mine=greedy(alive,exp);
-  if(alive.length){
-    out+='<div class="fcard"><h3>'+esc(T("myPlanT"))+'</h3>';
-    if(!E){out+='<p>'+esc(T("noElx"))+'</p>';}
-    else{
-      out+='<p>'+esc(T("myDmg",{e:N(exp),lo:N(lo),hi:N(hi)}))+'</p>';
-      if(mine.kills.length){
-        out+='<ol class="order">'+mine.kills.map(function(x){return '<li>'+esc(dn(x))+' <small>'+N(Math.round(x.hp/PTS_PER_ELX))+'</small>'+ico("i-elx-sm")+'</li>';}).join("")+'</ol>';
-        out+='<p>'+esc(T("killsRange",{a:greedy(alive,lo).kills.length,b:mine.kills.length,c:greedy(alive,hi).kills.length}))+'</p>';
-        if(mine.next&&mine.left>0)out+='<p>'+esc(T("leftover",{e:N(mine.left),d:dn(mine.next),p:Math.floor(mine.left/mine.next.hp*100)}))+'</p>';
-      }else{
-        out+='<p>'+esc(T("noKill",{d:dn(alive[0]),p:Math.floor(exp/alive[0].hp*100)}))+'</p>';
-      }
-    }
-    out+='</div>';
-  }
-
-  // 3. team vs expected share (4 players, 1/4 each)
-  var rows=[{n:T("me"),s:me,me:true}].concat(mates.map(function(s,k){return {n:T("mateShort",{n:k+1}),s:s};}));
-  out+='<div class="fcard"><h3>'+esc(T("teamT"))+'</h3><ul class="members">'+rows.map(function(r){
-    var p=Math.round(r.s/share*100);
-    return '<li'+(r.me?' class="me"':'')+'><span class="who">'+esc(r.n)+'</span><span class="meter"><i style="width:'+Math.min(100,p)+'%"></i></span><span class="val">'+esc(T("ofShare",{s:N(r.s),p:p}))+'</span></li>';
-  }).join("")+'</ul><p>'+esc(T("teamTotal",{s:N(teamScore),t:N(TOTAL)}))+'</p>';
-  var scattered=teamScore-deadHP;
-  if(teamScore>0&&scattered<0)out+='<div class="warn">'+ico("i-info")+'<span>'+esc(T("mismatch"))+'</span></div>';
-  else if(scattered>0&&alive.length)out+='<div class="warn tip">'+ico("i-info")+'<span>'+esc(T("scattered",{s:N(scattered)}))+'</span></div>';
-  out+='</div>';
-
-  // 4. flag outlook
-  var now=dead.length, afterMe=now+mine.kills.length;
-  var mateRemain=mates.reduce(function(a,s){return a+Math.max(0,share-s);},0);
-  var afterTeam=now+greedy(alive,exp+mateRemain).kills.length;
-  out+='<div class="fcard"><h3>'+esc(T("outlookT"))+'</h3><div class="outlook">'+
-    '<div><span>'+esc(T("nowF"))+'</span><b>'+now+'</b></div>'+
-    '<div><span>'+esc(T("afterMe"))+'</span><b>'+afterMe+'</b></div>'+
-    '<div><span>'+esc(T("afterTeam"))+'</span><b>'+afterTeam+'</b></div></div>';
-  var nx=unlockedAt(afterMe);
-  if(nx){var np=PRIZES[nx.next];
-    out+='<p>'+esc(T("nextPrize",{l:nx.next+1,p:np.name==="pSpins"?prizeDetail(np):T(np.name)+" "+prizeDetail(np),k:nx.need}))+'</p>';}
-  out+='<p class="assume">'+esc(T("assume"))+'</p></div>';
-
-  $("fOut").innerHTML=out;
-  renderChips(alive.length?alive[0].i:-1);
 }
 
 function renderSeqs(){
@@ -1368,7 +1027,6 @@ function renderSchedule(){
   var groups=[],byKey={};
   list.forEach(function(x){
     var p=zparts(x.ms,tz),t=pad(p.h)+":"+pad(p.mi);
-    if(x.it.time==="24:00"&&p.h===0&&p.mi===0){p=zparts(x.ms-60000,tz);t="24:00";}
     var key=p.y+"-"+p.mo+"-"+p.d;
     if(!byKey[key]){byKey[key]={key:key,wd:p.wd,items:[]};groups.push(byKey[key]);}
     byKey[key].items.push({it:x.it,t:t});
@@ -1391,7 +1049,7 @@ function syncHeader(){document.documentElement.style.setProperty("--hdr",documen
 
 function renderAll(){
   nf=new Intl.NumberFormat(lang==="zh-Hant"?"zh-TW":lang);
-  renderStatic();renderPrizes();renderDinos();renderPlan();renderFocus();renderSeqs();renderSchedule();syncHeader();
+  renderStatic();renderPrizes();renderDinos();renderPlan();renderSeqs();renderSchedule();syncHeader();
 }
 
 /* ---------------- init ---------------- */
@@ -1406,18 +1064,6 @@ $("langSel").addEventListener("change",function(){
   var u=new URL(location.href);u.searchParams.set("lang",lang);history.replaceState(null,"",u);
   renderAll();
 });
-$("kills").addEventListener("input",updateTrail);
-FIELDS.forEach(function(id){
-  $(id).addEventListener("input",function(){fstate[id]=this.value.replace(/[^\d,.\s]/g,"");if(this.value!==fstate[id])this.value=fstate[id];saveFocus();renderFocus();});
-});
-$("fDead").addEventListener("click",function(e){
-  var b=e.target.closest(".chip");if(!b)return;
-  var i=+b.getAttribute("data-i"),k=fstate.dead.indexOf(i);
-  if(k>=0)fstate.dead.splice(k,1);else fstate.dead.push(i);
-  saveFocus();renderFocus();
-  var again=$("fDead").querySelector('[data-i="'+i+'"]');if(again)again.focus();
-});
-$("fClear").addEventListener("click",function(){fstate={dead:[]};saveFocus();renderFocus();});
 window.addEventListener("resize",syncHeader);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(syncHeader);
 })();
