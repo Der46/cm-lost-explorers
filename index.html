@@ -89,7 +89,7 @@ a{color:var(--amber)}
 @keyframes drift{0%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(-14px,-26px) scale(1.15);opacity:.25}100%{transform:translate(0,0) scale(1);opacity:.5}}
 @media (max-width:700px){
   .hero{min-height:auto}
-  .hero::after{background:linear-gradient(0deg,var(--canopy) 8%,rgba(14,33,22,.78) 55%,rgba(14,33,22,.35) 100%)}
+  .hero::after{background:linear-gradient(0deg,var(--canopy) 6%,rgba(14,33,22,.7) 50%,rgba(14,33,22,.15) 100%)}
   .hero-inner{padding:180px 0 48px}
 }
 
@@ -108,7 +108,15 @@ section{padding:80px 0;scroll-margin-top:calc(var(--hdr,72px) + 12px)}
 .steps h3{margin:0 0 6px;font-family:var(--font-display);font-size:1.25rem;font-weight:800}
 .steps h3::before{counter-increment:s;content:counter(s) ". ";color:var(--amber)}
 .steps p{margin:0;color:var(--bone-dim)}
-@media (max-width:760px){.steps{grid-template-columns:1fr}}
+@media (max-width:760px){
+  #how{padding:32px 0}
+  #how .sec-head{margin-bottom:14px}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .steps li{padding:10px 8px 12px;border-left-width:2px}
+  .steps svg{width:34px;height:34px;margin-bottom:6px}
+  .steps h3{font-size:.92rem;line-height:1.3;margin-bottom:4px}
+  .steps p{font-size:.76rem;line-height:1.45}
+}
 
 /* ---------- prize trail (the hero moment) ---------- */
 .trail-panel{background:var(--fern);border:1px solid var(--fern-line);border-radius:var(--radius-lg);padding:24px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
@@ -227,6 +235,45 @@ section{padding:80px 0;scroll-margin-top:calc(var(--hdr,72px) + 12px)}
 .note{display:flex;gap:8px;margin-top:8px;padding:8px 10px;border-radius:10px;background:rgba(147,197,82,.12);color:#D7EDB8;font-size:.86rem;font-weight:700}
 .note svg{width:16px;height:16px;flex:none;margin-top:3px;color:var(--moss)}
 @media (max-width:400px){.days{grid-template-columns:1fr}.ev{grid-template-columns:50px 1fr;gap:10px}}
+
+/* ---------- schedule: compact one-screen view on phones ---------- */
+@media (max-width:600px){
+  #schedule{padding:8px 0 20px;scroll-margin-top:var(--hdr,104px)}
+  .sched-box{overflow:hidden}
+  .sched-fit{transform-origin:0 0}
+  #schedule .sec-head{margin-bottom:8px}
+  #schedule .sec-head h2{font-size:1.4rem}
+  #schedule .sec-head p{display:none}
+  #schedule .tz{margin-top:4px;padding:2px 9px;font-size:.74rem;gap:5px}
+  #schedule .tz svg{width:13px;height:13px}
+  #schedule .tz-src{margin-top:3px;font-size:.7rem;line-height:1.4}
+  .tips{margin:0 0 8px;padding:8px 10px}
+  .tips h3{margin:0 0 4px;font-size:.95rem;gap:6px}
+  .tips h3 svg{width:18px;height:18px}
+  .tips ul{gap:3px}
+  .tips li{gap:8px;padding:3px 6px;font-size:.78rem;line-height:1.4;align-items:center}
+  .tip-ico,.tip-ico svg{width:22px;height:22px}
+  .tip-ico i{width:12px;height:12px;right:-3px;bottom:-3px;border-width:1.5px}
+  .tip-ico i::before,.tip-ico i::after{width:6px;height:1.5px;margin:-.75px 0 0 -3px}
+  .days{grid-template-columns:1fr;gap:0;border:1px solid var(--fern-line);border-radius:var(--radius-md);overflow:hidden}
+  .day{display:grid;grid-template-columns:54px minmax(0,1fr);gap:0 8px;padding:5px 8px;border:0;border-top:1px solid var(--fern-line);border-radius:0}
+  .day:first-child{border-top:0}
+  .day.today{box-shadow:inset 3px 0 0 var(--amber);border-color:var(--fern-line);background:#21503a}
+  .day h3{grid-column:1;grid-row:1 / span 8;align-self:center;flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;margin:0;font-size:.82rem;line-height:1.3}
+  .day > .ev{grid-column:2}
+  .day h3 em{font-size:.6rem;padding:1px 6px}
+  .ev{grid-template-columns:38px minmax(0,1fr);gap:6px;padding:2px 0;border-top:0}
+  .ev time{font-size:.8rem;line-height:1.55}
+  .ev > div{display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px}
+  .ev h4{font-size:.8rem;line-height:1.55}
+  .tags{margin:0;gap:3px}
+  .tag{gap:3px;padding:0 6px 0 2px;font-size:.68rem;line-height:1.5}
+  .tag.txt{padding-left:6px}
+  .tag svg{width:12px;height:12px}
+  .note{flex-basis:100%;margin:1px 0 0;padding:1px 6px;gap:4px;font-size:.68rem;line-height:1.5}
+  .note svg{width:11px;height:11px;margin-top:2px}
+  .motto{margin-top:8px;font-size:.95rem}
+}
 
 /* ---------- footer ---------- */
 footer{padding:44px 0 56px;border-top:1px solid rgba(242,169,59,.18);background:#0a1910;text-align:center}
@@ -432,7 +479,7 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
   <!-- ================= HERO ================= -->
   <div class="hero">
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 1200 720" preserveAspectRatio="xMidYMax slice">
+      <svg viewBox="0 0 1200 720" preserveAspectRatio="xMaxYMax slice">
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E2A1C"/><stop offset=".45" stop-color="#2F5B37"/><stop offset=".78" stop-color="#C98A3A"/><stop offset="1" stop-color="#F2B65A"/></linearGradient>
           <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE3A1"/><stop offset=".6" stop-color="#FFC86A" stop-opacity=".8"/><stop offset="1" stop-color="#FFC86A" stop-opacity="0"/></radialGradient>
@@ -507,7 +554,7 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
 
   <!-- ================= SCHEDULE ================= -->
   <section id="schedule" class="alt">
-    <div class="wrap">
+    <div class="wrap sched-box" id="schedBox"><div class="sched-fit" id="schedFit">
       <div class="sec-head"><h2 data-i18n="schedTitle"></h2><p data-i18n="schedDesc"></p>
         <span class="tz"><svg aria-hidden="true"><use href="#i-clock"/></svg><span id="tzTxt"></span></span>
         <span class="tz-src" id="tzSrc"></span>
@@ -523,7 +570,7 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
       </aside>
       <div class="days" id="days"></div>
       <p class="motto" data-i18n="motto"></p>
-    </div>
+    </div></div>
   </section>
   <!-- ================= PRIZES ================= -->
   <section id="prizes">
@@ -1124,7 +1171,28 @@ function renderSchedule(){
   $("days").innerHTML=html;
 }
 
-function syncHeader(){document.documentElement.style.setProperty("--hdr",document.querySelector(".topbar").offsetHeight+"px");}
+function syncHeader(){document.documentElement.style.setProperty("--hdr",document.querySelector(".topbar").offsetHeight+"px");fitSchedule();}
+
+/* phones: shrink the whole schedule proportionally so one tap on the nav shows all of it */
+var MIN_FIT=0.62;
+function fitSchedule(){
+  var box=$("schedBox"),el=$("schedFit");
+  el.style.transform="";el.style.width="";box.style.height="";
+  if(!window.matchMedia("(max-width:600px)").matches)return;
+  var vh=(window.visualViewport?window.visualViewport.height:window.innerHeight);
+  var avail=vh-document.querySelector(".topbar").offsetHeight-16;
+  function hAt(s){el.style.width=(100/s)+"%";return el.offsetHeight*s;}
+  var sc=1;
+  if(hAt(1)>avail){
+    // text reflows as the layout widens, so binary-search the largest scale whose scaled height fits
+    var lo=MIN_FIT,hi=1;
+    for(var k=0;k<10;k++){var mid=(lo+hi)/2;if(hAt(mid)<=avail)lo=mid;else hi=mid;}
+    sc=lo;hAt(sc);
+  }else{el.style.width="";}
+  el.style.transform=sc<1?"scale("+sc+")":"";
+  box.style.height=Math.ceil(el.offsetHeight*sc)+"px";
+  box.setAttribute("data-scale",sc.toFixed(3));
+}
 
 function renderAll(){
   nf=new Intl.NumberFormat(lang==="zh-Hant"?"zh-TW":lang);
