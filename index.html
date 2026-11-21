@@ -199,6 +199,18 @@ section{padding:80px 0;scroll-margin-top:calc(var(--hdr,72px) + 12px)}
 .tz{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:6px 12px;border-radius:999px;background:var(--fern);border:1px solid var(--fern-line);font-weight:700;font-size:.9rem;color:var(--bone)}
 .tz svg{width:16px;height:16px;color:var(--amber);flex:none}
 .tz-src{display:block;margin-top:8px;font-size:.85rem;color:var(--bone-dim)}
+.tips{margin:0 0 24px;padding:20px 22px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(217,71,43,.18),rgba(242,169,59,.10));border:1px solid rgba(242,169,59,.45)}
+.tips h3{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:var(--font-display);font-weight:800;font-size:1.3rem;line-height:1.3;color:var(--amber)}
+.tips h3 svg{width:26px;height:26px;flex:none}
+.tips ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.tips li{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:var(--radius-md);background:rgba(14,33,22,.55);font-weight:700;line-height:1.55}
+.tip-ico{position:relative;flex:none;width:36px;height:36px}
+.tip-ico svg{width:36px;height:36px}
+.tip-ico i{position:absolute;right:-4px;bottom:-4px;width:18px;height:18px;border-radius:50%;background:var(--lava);border:2px solid var(--canopy)}
+.tip-ico i::before,.tip-ico i::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:2px;margin:-1px 0 0 -4.5px;background:#fff;border-radius:1px;transform:rotate(45deg)}
+.tip-ico i::after{transform:rotate(-45deg)}
+.motto{margin:28px 0 0;text-align:center;font-family:var(--font-display);font-weight:800;font-size:clamp(1.15rem,3vw,1.5rem);line-height:1.4;color:var(--amber)}
+@media (max-width:860px){.tips ul{grid-template-columns:1fr}}
 .days{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .day{background:var(--fern);border:1px solid var(--fern-line);border-radius:var(--radius-lg);padding:18px 18px 8px}
 .day.today{border-color:var(--amber);box-shadow:0 0 0 2px var(--amber),0 16px 30px rgba(242,169,59,.15)}
@@ -380,6 +392,8 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M12 11v6M12 7.2v.1" stroke="#0E2116" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 2.5L22.5 21h-21z" fill="#F2A93B" stroke="#7a3f0b" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 9v5.5M12 17.6v.1" stroke="#2B1C0D" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#F2A93B"/><path d="M12 12L12 1A11 11 0 0 1 21.5 6.5Z" fill="#D9472B"/><path d="M12 12L21.5 6.5A11 11 0 0 1 21.5 17.5Z" fill="#93C552"/><path d="M12 12L21.5 17.5A11 11 0 0 1 12 23Z" fill="#3FA9F5"/><path d="M12 12L12 23A11 11 0 0 1 2.5 17.5Z" fill="#9A36E8"/><path d="M12 12L2.5 17.5A11 11 0 0 1 2.5 6.5Z" fill="#F4B739"/><circle cx="12" cy="12" r="11" fill="none" stroke="#6B3B06" stroke-width="1.5"/><circle cx="12" cy="12" r="2.6" fill="#FFF0B0" stroke="#6B3B06" stroke-width="1.2"/></symbol>
   <symbol id="i-seal" viewBox="0 0 24 24"><path d="M4 18V9l4 4 4-7 4 7 4-4v9z" fill="#FFE7A8" stroke="#7A1A0B" stroke-width="1.4" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -545,8 +559,18 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
       <div class="sec-head"><h2 data-i18n="schedTitle"></h2><p data-i18n="schedDesc"></p>
         <span class="tz"><svg aria-hidden="true"><use href="#i-clock"/></svg><span id="tzTxt"></span></span>
         <span class="tz-src" id="tzSrc"></span>
+        <span class="tz-src" id="schedVer"></span>
       </div>
+      <aside class="tips" aria-labelledby="tipsTitle">
+        <h3 id="tipsTitle"><svg aria-hidden="true"><use href="#i-warn"/></svg><span data-i18n="tipsTitle"></span></h3>
+        <ul>
+          <li><span class="tip-ico" aria-hidden="true"><svg><use href="#i-bolt"/></svg><i></i></span><span data-i18n="tip1"></span></li>
+          <li><span class="tip-ico" aria-hidden="true"><svg><use href="#i-elx-sm"/></svg><i></i></span><span data-i18n="tip2"></span></li>
+          <li><span class="tip-ico wait" aria-hidden="true"><svg><use href="#i-wheel"/></svg></span><span data-i18n="tip3"></span></li>
+        </ul>
+      </aside>
       <div class="days" id="days"></div>
+      <p class="motto" data-i18n="motto"></p>
     </div>
   </section>
 </main>
@@ -583,8 +607,8 @@ var SCHEDULE=[
   {d:2, items:[{time:"19:05",ev:"pickFour",tags:[["raid","20K"],["spins","30"],["elixir","300"]]},{time:"20:05",ev:"coinRace",tags:[["spins","25"]]}]},
   {d:3, items:[{time:"15:05",ev:"rapidRush",tags:[["elixir","800"]]},{time:"21:00",ev:"potionRace",tags:[["txt","normalToPotion"]]}]},
   {d:4, items:[{time:"08:00",ev:"shinyTrio",tags:[["spinsTotal",52],["txt","loginCountdown"]]},{time:"15:05",ev:"rapidRush",tags:[["spins","40"]]},{time:"21:05",ev:"elixirPass",tags:[["txt","collectElixir"],["days",3]],note:"freeUnlockNote"},{time:"21:05",ev:"lightningPass",tags:[["elixirOnly"]]},{time:"21:05",ev:"wheelOfFate",tags:[["txt","collectPieces"]]}]},
-  {d:5, items:[{time:"22:05",ev:"rapidRush",tags:[["elixir","800"]]},{time:"00:00",ev:"normalRace",tags:[["txt","potionToNormal"]]}]},
-  {d:6, items:[{time:"02:00",ev:"adventureRush",tags:[["track","300"]]},{time:"23:50",ev:"warriorArena",tags:[["stages",3],["spins","14"]]}]},
+  {d:5, items:[{time:"22:05",ev:"rapidRush",tags:[["elixir","800"]]}]},
+  {d:6, items:[{time:"00:00",ev:"normalRace",tags:[["txt","potionToNormal"]]},{time:"02:00",ev:"adventureRush",tags:[["track","300"]]},{time:"23:50",ev:"warriorArena",tags:[["stages",3],["spins","14"]]}]},
   {d:7, items:[{time:"01:00",ev:"twinFlames",tags:[["elixir","800"]]}]}
 ];
 
@@ -844,34 +868,88 @@ var I18N={
 }
 };
 
-/* ---------------- i18n: time zones ---------------- */
+/* ---------------- i18n: time zones + reminders ---------------- */
 var EXTRA={
 "zh-Hant":{
- tzName:"台灣時間",tzTpl:"時間為{z}（{o}）",tzSrc:"",nextDay:"下{d}"
+ tzName:"台灣時間",tzTpl:"時間為{z}（{o}）",tzSrc:"",nextDay:"下{d}",
+ tipsTitle:"提醒您",
+ tip1:"這次活動不要合併閃電。",
+ tip2:"魔藥也別急著拿去探險。",
+ tip3:"請等到週五的命運輪盤開始收集藥水後，再取得藥水。",
+ motto:"跟著時間走，輕鬆玩活動！",
+ schedVer:"資料版本：{v}（{u} 更新）"
 },
 "en":{
- tzName:"US Eastern Time",tzTpl:"Times shown in {z} ({o})",tzSrc:"Converted from Taiwan time (UTC+8).",nextDay:"Next {d}"
+ tzName:"US Eastern Time",tzTpl:"Times shown in {z} ({o})",tzSrc:"Converted from Taiwan time (UTC+8).",nextDay:"Next {d}",
+ tipsTitle:"Heads-up",
+ tip1:"Don't merge lightning during this event.",
+ tip2:"Don't rush to spend elixirs on the expedition either.",
+ tip3:"Wait for Friday's Wheel of Fate to start collecting elixirs before you pick up more.",
+ motto:"Follow the schedule and enjoy the event with ease!",
+ schedVer:"Data version: {v} (updated {u})"
 },
 "vi":{
- tzName:"giờ Việt Nam",tzTpl:"Giờ hiển thị theo {z} ({o})",tzSrc:"Quy đổi từ giờ Đài Loan (UTC+8).",nextDay:"{d} tuần sau"
+ tzName:"giờ Việt Nam",tzTpl:"Giờ hiển thị theo {z} ({o})",tzSrc:"Quy đổi từ giờ Đài Loan (UTC+8).",nextDay:"{d} tuần sau",
+ tipsTitle:"Lưu ý",
+ tip1:"Đừng gộp tia chớp trong sự kiện này.",
+ tip2:"Cũng đừng vội dùng thuốc tiên để thám hiểm.",
+ tip3:"Hãy đợi Vòng Quay Định Mệnh thứ Sáu bắt đầu thu thập thuốc tiên rồi mới lấy thuốc tiên.",
+ motto:"Theo lịch mà chơi, sự kiện thật nhẹ nhàng!",
+ schedVer:"Phiên bản dữ liệu: {v} (cập nhật {u})"
 },
 "ja":{
- tzName:"日本時間",tzTpl:"時刻は{z}（{o}）で表示",tzSrc:"台湾時間（UTC+8）から換算しています。",nextDay:"翌週の{d}"
+ tzName:"日本時間",tzTpl:"時刻は{z}（{o}）で表示",tzSrc:"台湾時間（UTC+8）から換算しています。",nextDay:"翌週の{d}",
+ tipsTitle:"ご注意",
+ tip1:"今回のイベントでは稲妻を合成しないでください。",
+ tip2:"エリクサーも急いで探検に使わないでください。",
+ tip3:"金曜日の運命のルーレットでエリクサー集めが始まってから、エリクサーを入手しましょう。",
+ motto:"スケジュール通りに進めて、気楽にイベントを楽しもう！",
+ schedVer:"データ版：{v}（{u}更新）"
 },
 "ko":{
- tzName:"한국 시간",tzTpl:"{z} 기준 ({o})",tzSrc:"대만 시간(UTC+8)에서 변환했습니다.",nextDay:"다음 주 {d}"
+ tzName:"한국 시간",tzTpl:"{z} 기준 ({o})",tzSrc:"대만 시간(UTC+8)에서 변환했습니다.",nextDay:"다음 주 {d}",
+ tipsTitle:"알림",
+ tip1:"이번 이벤트에서는 번개를 합치지 마세요.",
+ tip2:"엘릭서도 서둘러 탐험에 쓰지 마세요.",
+ tip3:"금요일 운명의 룰렛에서 엘릭서 수집이 시작된 뒤에 엘릭서를 얻으세요.",
+ motto:"일정대로 따라가며 편하게 이벤트를 즐기세요!",
+ schedVer:"데이터 버전: {v} ({u} 업데이트)"
 },
 "th":{
- tzName:"เวลาประเทศไทย",tzTpl:"แสดงเวลาตาม{z} ({o})",tzSrc:"แปลงจากเวลาไต้หวัน (UTC+8)",nextDay:"{d}ถัดไป"
+ tzName:"เวลาประเทศไทย",tzTpl:"แสดงเวลาตาม{z} ({o})",tzSrc:"แปลงจากเวลาไต้หวัน (UTC+8)",nextDay:"{d}ถัดไป",
+ tipsTitle:"ข้อควรระวัง",
+ tip1:"อีเวนต์นี้อย่ารวมสายฟ้า",
+ tip2:"อย่าเพิ่งรีบใช้ยาวิเศษไปผจญภัย",
+ tip3:"รอให้วงล้อโชคชะตาวันศุกร์เริ่มสะสมยาวิเศษก่อน แล้วค่อยรับยาวิเศษ",
+ motto:"ทำตามตารางเวลา เล่นอีเวนต์ได้สบาย ๆ!",
+ schedVer:"ข้อมูลเวอร์ชัน {v} (อัปเดต {u})"
 },
 "id":{
- tzName:"WIB (Jakarta)",tzTpl:"Waktu ditampilkan dalam {z} ({o})",tzSrc:"Dikonversi dari waktu Taiwan (UTC+8).",nextDay:"{d} berikutnya"
+ tzName:"WIB (Jakarta)",tzTpl:"Waktu ditampilkan dalam {z} ({o})",tzSrc:"Dikonversi dari waktu Taiwan (UTC+8).",nextDay:"{d} berikutnya",
+ tipsTitle:"Perhatian",
+ tip1:"Jangan gabungkan petir di event ini.",
+ tip2:"Jangan buru-buru memakai elixir untuk berpetualang.",
+ tip3:"Tunggu Roda Takdir hari Jumat mulai mengumpulkan elixir, baru ambil elixir.",
+ motto:"Ikuti jadwalnya, main event jadi santai!",
+ schedVer:"Versi data: {v} (diperbarui {u})"
 },
 "es":{
- tzName:"hora del centro de México",tzTpl:"Horas en {z} ({o})",tzSrc:"Convertidas desde la hora de Taiwán (UTC+8).",nextDay:"{d} siguiente"
+ tzName:"hora del centro de México",tzTpl:"Horas en {z} ({o})",tzSrc:"Convertidas desde la hora de Taiwán (UTC+8).",nextDay:"{d} siguiente",
+ tipsTitle:"Atención",
+ tip1:"No combines rayos en este evento.",
+ tip2:"Tampoco te apresures a gastar elixires en la expedición.",
+ tip3:"Espera a que la Rueda del Destino del viernes empiece a reunir elixires antes de conseguir más.",
+ motto:"¡Sigue el horario y disfruta el evento sin complicaciones!",
+ schedVer:"Versión de datos: {v} (actualizado {u})"
 },
 "pt":{
- tzName:"horário de Brasília",tzTpl:"Horários em {z} ({o})",tzSrc:"Convertidos do horário de Taiwan (UTC+8).",nextDay:"{d} seguinte"
+ tzName:"horário de Brasília",tzTpl:"Horários em {z} ({o})",tzSrc:"Convertidos do horário de Taiwan (UTC+8).",nextDay:"{d} seguinte",
+ tipsTitle:"Atenção",
+ tip1:"Não combine raios neste evento.",
+ tip2:"Também não tenha pressa em gastar elixires na expedição.",
+ tip3:"Espere a Roda do Destino de sexta começar a juntar elixires antes de pegar mais.",
+ motto:"Siga a agenda e aproveite o evento sem complicação!",
+ schedVer:"Versão dos dados: {v} (atualizado em {u})"
 }
 };
 Object.keys(EXTRA).forEach(function(k){var src=EXTRA[k];for(var p in src)I18N[k][p]=src[p];});
@@ -1017,6 +1095,7 @@ function renderSchedule(){
   var tp=zparts(now,tz),todayKey=tp.y+"-"+tp.mo+"-"+tp.d;
   $("tzTxt").textContent=T("tzTpl",{z:T("tzName"),o:offsetLabel(now,tz)});
   $("tzSrc").textContent=tz===SRC_TZ?"":T("tzSrc");
+  $("schedVer").textContent=T("schedVer",{v:"2026.9.7–9.14",u:"2026.11.16"});
   // turn every event into an instant, then regroup by local date in the chosen zone
   var list=[];
   SCHEDULE.forEach(function(g){g.items.forEach(function(it){
