@@ -30,7 +30,7 @@
    - 獎勵圖示以 `r-` 開頭（`r-chest-green`、`r-token`、`r-spins`、`r-chest-mystery`、`r-chest-purple`、`r-tokenbox`、`r-chest-red`、`r-spins-grand`），依使用者提供的附圖繪製；寶箱共用 `chest-frame`。
    - 介面小圖示以 `i-` 開頭（`i-flag`、`i-elixir`、`i-dino`、`i-bolt`…）。
    - 不使用 emoji 當圖示，一律用 sprite 的 `<use href="#id">`；JS 端用 `ico(id, viewBox)` 產生。
-3. **HTML 區塊**：`.hero`、`#how`、`#prizes`、`#dinos`、`#plan`、`#bets`、`#schedule`、`footer`。靜態文字以 `data-i18n="key"` 標記，動態內容由 JS 渲染進對應容器。
+3. **HTML 區塊**（依頁面順序）：`.hero`、`#how`、`#schedule`、`#prizes`、`#dinos`、`#plan`、`#bets`、`footer`。時間表刻意緊接在「活動怎麼玩」之後，讓使用者一進頁面就看到玩法與時程；導覽列也以「時間表」為第一項。區塊背景以 `.alt` 交替。靜態文字以 `data-i18n="key"` 標記，動態內容由 JS 渲染進對應容器。
 4. **`<script>`**（單一 IIFE，ES5 寫法：`var`、`function`，請維持一致）：
    - **資料**：`DINO_HP`（20 隻恐龍血量）、`PRIZES`（8 關獎勵：旗數 `cost`、圖示、名稱 key、`detail`）、`SEQS`（兩套下注順序）、`SCHEDULE`（每週活動）。
    - **翻譯**：`I18N`（主要字串）與 `EXTRA`（時區、提醒卡片與資料版本字串，啟動時合併進 `I18N`）。
@@ -57,6 +57,8 @@
 - 語言決定順序：網址 `?lang=` → `localStorage` 的 `cm-lost-lang` → 瀏覽器語言（任何 `zh*` 皆對應 `zh-Hant`）→ 預設中文。
 - **新增或修改文字時，9 種語言都要同步更新**，不可只改中文。字串內的變數用 `{name}` 佔位，數字一律經 `N()` 格式化後再代入。
 - 活動名稱（各語言的 `ev` 物件）的外語版本為字面翻譯，非遊戲官方譯名；若使用者提供官方名稱，以官方為準。
+- 「探險狂潮」中文名稱固定為 `探險狂潮(可洗)`，其他語言同樣附上「可重複」的註記。
+- 提醒卡片第一點中文為「這次活動不要先合併閃電。」，各語言譯文須保留「先／暫時不要」的語意。
 - 泰文、越南文有上下附加符號，行高需較寬鬆（已有 `html[lang="th"]` 規則）。任何使用 `background-clip:text` 的文字（例如 hero 標題）都要留足行高與上下 padding，否則字形會被切掉。
 
 ## 時間表與時區規則

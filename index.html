@@ -404,11 +404,11 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
       <span data-i18n="title">失落探險隊</span>
     </a>
     <nav class="nav" aria-label="Sections">
+      <a href="#schedule" data-i18n="navSchedule">時間表</a>
       <a href="#prizes" data-i18n="navPrizes">獎勵</a>
       <a href="#dinos" data-i18n="navDinos">恐龍血量</a>
       <a href="#plan" data-i18n="navPlan">全隊估算</a>
       <a href="#bets" data-i18n="navBets">下注順序</a>
-      <a href="#schedule" data-i18n="navSchedule">時間表</a>
     </nav>
     <div class="lang">
       <svg aria-hidden="true"><use href="#i-globe"/></svg>
@@ -505,54 +505,6 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
     </div>
   </section>
 
-  <!-- ================= PRIZES ================= -->
-  <section id="prizes" class="alt">
-    <div class="wrap">
-      <div class="sec-head"><h2 data-i18n="prizeTitle"></h2><p data-i18n="prizeDesc"></p></div>
-      <div class="trail-panel">
-        <div class="bar" aria-hidden="true" style="margin-top:22px"><div class="bar-track" id="barTrack"></div><div id="barMarks"></div></div>
-        <ul class="prizes" id="prizeList"></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= DINOS ================= -->
-  <section id="dinos">
-    <div class="wrap">
-      <div class="sec-head"><h2 data-i18n="dinoTitle"></h2><p data-i18n="dinoDesc"></p></div>
-      <ol class="dinos" id="dinoList"></ol>
-      <div class="dino-total"><span data-i18n="dinoTotal"></span><b id="dinoTotal"></b></div>
-    </div>
-  </section>
-
-  <!-- ================= PLAN ================= -->
-  <section id="plan" class="alt">
-    <div class="wrap">
-      <div class="sec-head"><h2 data-i18n="planTitle"></h2><p data-i18n="planDesc"></p></div>
-      <div class="plan">
-        <div class="plan-card">
-          <h3 data-i18n="totalHp"></h3>
-          <div class="big" id="bigTotal"></div>
-          <div class="rate"><svg viewBox="0 0 60 70" aria-hidden="true"><use href="#i-elixir"/></svg><span id="rateTxt"></span></div>
-        </div>
-        <div class="plan-card">
-          <div class="per">
-            <div><span data-i18n="perPts"></span><b id="perPts"></b></div>
-            <div><span data-i18n="perElx"></span><b id="perElx"></b></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= BETS ================= -->
-  <section id="bets">
-    <div class="wrap">
-      <div class="sec-head"><h2 data-i18n="betTitle"></h2><p data-i18n="betDesc"></p></div>
-      <div class="seqs" id="seqs"></div>
-    </div>
-  </section>
-
   <!-- ================= SCHEDULE ================= -->
   <section id="schedule" class="alt">
     <div class="wrap">
@@ -573,6 +525,54 @@ footer .copy{font-family:var(--font-display);font-weight:800;color:var(--bone);f
       <p class="motto" data-i18n="motto"></p>
     </div>
   </section>
+  <!-- ================= PRIZES ================= -->
+  <section id="prizes">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="prizeTitle"></h2><p data-i18n="prizeDesc"></p></div>
+      <div class="trail-panel">
+        <div class="bar" aria-hidden="true" style="margin-top:22px"><div class="bar-track" id="barTrack"></div><div id="barMarks"></div></div>
+        <ul class="prizes" id="prizeList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DINOS ================= -->
+  <section id="dinos" class="alt">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="dinoTitle"></h2><p data-i18n="dinoDesc"></p></div>
+      <ol class="dinos" id="dinoList"></ol>
+      <div class="dino-total"><span data-i18n="dinoTotal"></span><b id="dinoTotal"></b></div>
+    </div>
+  </section>
+
+  <!-- ================= PLAN ================= -->
+  <section id="plan">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="planTitle"></h2><p data-i18n="planDesc"></p></div>
+      <div class="plan">
+        <div class="plan-card">
+          <h3 data-i18n="totalHp"></h3>
+          <div class="big" id="bigTotal"></div>
+          <div class="rate"><svg viewBox="0 0 60 70" aria-hidden="true"><use href="#i-elixir"/></svg><span id="rateTxt"></span></div>
+        </div>
+        <div class="plan-card">
+          <div class="per">
+            <div><span data-i18n="perPts"></span><b id="perPts"></b></div>
+            <div><span data-i18n="perElx"></span><b id="perElx"></b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BETS ================= -->
+  <section id="bets" class="alt">
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="betTitle"></h2><p data-i18n="betDesc"></p></div>
+      <div class="seqs" id="seqs"></div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -636,7 +636,7 @@ var I18N={
  loop:"改用 ×{b} 一直打到主獎（{p} 點），然後從頭再來",perSpin:"每次 {e} 魔藥",
  schedTitle:"每週活動時間表",schedDesc:"失落探險隊期間每週固定輪替的活動，先看好時間再囤魔藥與旋轉。",tz:"時間為台灣時間（UTC+8）",
  days:["星期一","星期二","星期三","星期四","星期五","星期六","星期日"],nextMon:"下週一",today:"今天",
- ev:{elixirPass:"魔藥通行證",rapidRush:"激流狂潮",twinFlames:"雙生火焰",taskKnockout:"任務擊倒",pickFour:"任選四項",coinRace:"金幣比賽",potionRace:"藥水競賽",shinyTrio:"閃亮三重奏",lightningPass:"閃電通行證",wheelOfFate:"命運輪盤",normalRace:"正常競賽",adventureRush:"探險狂潮",warriorArena:"勇士競技場"},
+ ev:{elixirPass:"魔藥通行證",rapidRush:"激流狂潮",twinFlames:"雙生火焰",taskKnockout:"任務擊倒",pickFour:"任選四項",coinRace:"金幣比賽",potionRace:"藥水競賽",shinyTrio:"閃亮三重奏",lightningPass:"閃電通行證",wheelOfFate:"命運輪盤",normalRace:"正常競賽",adventureRush:"探險狂潮(可洗)",warriorArena:"勇士競技場"},
  attack:"攻擊",raid:"偷襲",elixir:"魔藥",daysN:"{n} 天",missions:"{n} 關任務",goldHammer:"金鎚",totalN:"共 {n}",stages:"{n} 關",
  freeUnlockCarry:"免費解鎖，可帶到週五的魔藥通行證",loginCountdown:"登入後倒數 12 小時",collectElixir:"收集魔藥",collectPieces:"從魔藥通行證收集拼圖",
  freeUnlockNote:"魔藥通行證記得按「免費解鎖」",normalToPotion:"正常競賽改為藥水競賽",potionToNormal:"藥水競賽改回正常競賽",potionTrack:"藥水賽道終極獎",
@@ -664,7 +664,7 @@ var I18N={
  loop:"Switch to ×{b} until the main prize ({p} points), then restart",perSpin:"{e} elixirs each",
  schedTitle:"Weekly event schedule",schedDesc:"Events that rotate every week during Lost Explorers. Check the times before you save up elixirs and spins.",tz:"Times are Taiwan time (UTC+8)",
  days:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],nextMon:"Next Monday",today:"Today",
- ev:{elixirPass:"Elixir Pass",rapidRush:"Rapid Rush",twinFlames:"Twin Flames",taskKnockout:"Mission Knockout",pickFour:"Pick Any Four",coinRace:"Coin Race",potionRace:"Potion Race",shinyTrio:"Shiny Trio",lightningPass:"Lightning Pass",wheelOfFate:"Wheel of Fate",normalRace:"Regular Race",adventureRush:"Adventure Rush",warriorArena:"Warrior Arena"},
+ ev:{elixirPass:"Elixir Pass",rapidRush:"Rapid Rush",twinFlames:"Twin Flames",taskKnockout:"Mission Knockout",pickFour:"Pick Any Four",coinRace:"Coin Race",potionRace:"Potion Race",shinyTrio:"Shiny Trio",lightningPass:"Lightning Pass",wheelOfFate:"Wheel of Fate",normalRace:"Regular Race",adventureRush:"Adventure Rush (repeatable)",warriorArena:"Warrior Arena"},
  attack:"Attack",raid:"Raid",elixir:"Elixirs",daysN:"{n} days",missions:"{n} missions",goldHammer:"Golden hammer",totalN:"{n} total",stages:"{n} stages",
  freeUnlockCarry:"Free unlock; carries over to Friday's Elixir Pass",loginCountdown:"12-hour countdown after login",collectElixir:"Collect elixirs",collectPieces:"Collect pieces from the Elixir Pass",
  freeUnlockNote:"Remember to tap \"Free unlock\" on the Elixir Pass",normalToPotion:"Regular races switch to Potion Races",potionToNormal:"Potion Races switch back to regular races",potionTrack:"Potion track final prize",
@@ -692,7 +692,7 @@ var I18N={
  loop:"Chuyển sang ×{b} đến khi trúng giải chính ({p} điểm), rồi bắt đầu lại",perSpin:"{e} thuốc tiên mỗi lần",
  schedTitle:"Lịch sự kiện hằng tuần",schedDesc:"Các sự kiện luân phiên hằng tuần trong Nhà Thám Hiểm Thất Lạc. Xem giờ trước khi tích thuốc tiên và lượt quay.",tz:"Giờ Đài Loan (UTC+8)",
  days:["Thứ Hai","Thứ Ba","Thứ Tư","Thứ Năm","Thứ Sáu","Thứ Bảy","Chủ Nhật"],nextMon:"Thứ Hai tuần sau",today:"Hôm nay",
- ev:{elixirPass:"Thẻ Thông Hành Thuốc Tiên",rapidRush:"Cơn Sốt Thác Lũ",twinFlames:"Ngọn Lửa Song Sinh",taskKnockout:"Hạ Gục Nhiệm Vụ",pickFour:"Chọn Bốn Món",coinRace:"Đua Xu",potionRace:"Đua Thuốc Tiên",shinyTrio:"Bộ Ba Lấp Lánh",lightningPass:"Thẻ Thông Hành Tia Chớp",wheelOfFate:"Vòng Quay Định Mệnh",normalRace:"Đua Thường",adventureRush:"Cơn Sốt Phiêu Lưu",warriorArena:"Đấu Trường Chiến Binh"},
+ ev:{elixirPass:"Thẻ Thông Hành Thuốc Tiên",rapidRush:"Cơn Sốt Thác Lũ",twinFlames:"Ngọn Lửa Song Sinh",taskKnockout:"Hạ Gục Nhiệm Vụ",pickFour:"Chọn Bốn Món",coinRace:"Đua Xu",potionRace:"Đua Thuốc Tiên",shinyTrio:"Bộ Ba Lấp Lánh",lightningPass:"Thẻ Thông Hành Tia Chớp",wheelOfFate:"Vòng Quay Định Mệnh",normalRace:"Đua Thường",adventureRush:"Cơn Sốt Phiêu Lưu (lặp lại được)",warriorArena:"Đấu Trường Chiến Binh"},
  attack:"Tấn công",raid:"Đột kích",elixir:"Thuốc tiên",daysN:"{n} ngày",missions:"{n} nhiệm vụ",goldHammer:"Búa vàng",totalN:"Tổng {n}",stages:"{n} chặng",
  freeUnlockCarry:"Mở khóa miễn phí, giữ được đến Thẻ Thông Hành Thuốc Tiên thứ Sáu",loginCountdown:"Đếm ngược 12 giờ sau khi đăng nhập",collectElixir:"Thu thập thuốc tiên",collectPieces:"Thu thập mảnh ghép từ Thẻ Thông Hành Thuốc Tiên",
  freeUnlockNote:"Nhớ nhấn \"Mở khóa miễn phí\" ở Thẻ Thông Hành Thuốc Tiên",normalToPotion:"Đua thường chuyển thành Đua Thuốc Tiên",potionToNormal:"Đua Thuốc Tiên trở lại đua thường",potionTrack:"Giải cuối đường đua thuốc tiên",
@@ -720,7 +720,7 @@ var I18N={
  loop:"×{b} でメイン報酬（{p}pt）まで打ち、最初に戻る",perSpin:"1回 エリクサー {e}",
  schedTitle:"週間イベントスケジュール",schedDesc:"ロスト・エクスプローラーズ期間中に毎週ローテーションするイベントです。時間を確認してからエリクサーとスピンを貯めましょう。",tz:"時刻は台湾時間（UTC+8）",
  days:["月曜日","火曜日","水曜日","木曜日","金曜日","土曜日","日曜日"],nextMon:"翌週月曜日",today:"今日",
- ev:{elixirPass:"エリクサーパス",rapidRush:"激流ラッシュ",twinFlames:"ツインフレイム",taskKnockout:"ミッションノックアウト",pickFour:"4つ選択",coinRace:"コインレース",potionRace:"ポーションレース",shinyTrio:"シャイニートリオ",lightningPass:"ライトニングパス",wheelOfFate:"運命のルーレット",normalRace:"通常レース",adventureRush:"探検ラッシュ",warriorArena:"勇者アリーナ"},
+ ev:{elixirPass:"エリクサーパス",rapidRush:"激流ラッシュ",twinFlames:"ツインフレイム",taskKnockout:"ミッションノックアウト",pickFour:"4つ選択",coinRace:"コインレース",potionRace:"ポーションレース",shinyTrio:"シャイニートリオ",lightningPass:"ライトニングパス",wheelOfFate:"運命のルーレット",normalRace:"通常レース",adventureRush:"探検ラッシュ（周回可）",warriorArena:"勇者アリーナ"},
  attack:"アタック",raid:"襲撃",elixir:"エリクサー",daysN:"{n}日間",missions:"ミッション{n}個",goldHammer:"金のハンマー",totalN:"合計{n}",stages:"{n}ステージ",
  freeUnlockCarry:"無料解放。金曜のエリクサーパスに持ち越し可",loginCountdown:"ログインから12時間カウントダウン",collectElixir:"エリクサーを集める",collectPieces:"エリクサーパスでピースを集める",
  freeUnlockNote:"エリクサーパスは「無料解放」を忘れずに",normalToPotion:"通常レースがポーションレースに切り替え",potionToNormal:"ポーションレースが通常レースに戻る",potionTrack:"ポーショントラック最終報酬",
@@ -748,7 +748,7 @@ var I18N={
  loop:"×{b}로 메인 보상({p}점)까지 진행 후 처음부터 다시",perSpin:"회당 엘릭서 {e}",
  schedTitle:"주간 이벤트 일정",schedDesc:"잃어버린 탐험대 기간 동안 매주 돌아가는 이벤트입니다. 시간을 확인하고 엘릭서와 스핀을 모아 두세요.",tz:"대만 시간 기준 (UTC+8)",
  days:["월요일","화요일","수요일","목요일","금요일","토요일","일요일"],nextMon:"다음 주 월요일",today:"오늘",
- ev:{elixirPass:"엘릭서 패스",rapidRush:"급류 러시",twinFlames:"트윈 플레임",taskKnockout:"미션 녹아웃",pickFour:"네 개 선택",coinRace:"코인 레이스",potionRace:"포션 레이스",shinyTrio:"샤이니 트리오",lightningPass:"번개 패스",wheelOfFate:"운명의 룰렛",normalRace:"일반 레이스",adventureRush:"탐험 러시",warriorArena:"전사의 아레나"},
+ ev:{elixirPass:"엘릭서 패스",rapidRush:"급류 러시",twinFlames:"트윈 플레임",taskKnockout:"미션 녹아웃",pickFour:"네 개 선택",coinRace:"코인 레이스",potionRace:"포션 레이스",shinyTrio:"샤이니 트리오",lightningPass:"번개 패스",wheelOfFate:"운명의 룰렛",normalRace:"일반 레이스",adventureRush:"탐험 러시 (반복 가능)",warriorArena:"전사의 아레나"},
  attack:"공격",raid:"습격",elixir:"엘릭서",daysN:"{n}일",missions:"미션 {n}개",goldHammer:"황금 망치",totalN:"총 {n}",stages:"{n}단계",
  freeUnlockCarry:"무료 잠금 해제, 금요일 엘릭서 패스까지 이어짐",loginCountdown:"로그인 후 12시간 카운트다운",collectElixir:"엘릭서 수집",collectPieces:"엘릭서 패스에서 조각 수집",
  freeUnlockNote:"엘릭서 패스는 \"무료 잠금 해제\"를 꼭 누르세요",normalToPotion:"일반 레이스가 포션 레이스로 전환",potionToNormal:"포션 레이스가 일반 레이스로 복귀",potionTrack:"포션 트랙 최종 보상",
@@ -776,7 +776,7 @@ var I18N={
  loop:"เปลี่ยนเป็น ×{b} จนได้รางวัลหลัก ({p} แต้ม) แล้วเริ่มใหม่",perSpin:"ครั้งละยาวิเศษ {e}",
  schedTitle:"ตารางอีเวนต์รายสัปดาห์",schedDesc:"อีเวนต์ที่หมุนเวียนทุกสัปดาห์ช่วงนักสำรวจที่สาบสูญ ดูเวลาก่อนสะสมยาวิเศษและสปิน",tz:"เวลาไต้หวัน (UTC+8)",
  days:["วันจันทร์","วันอังคาร","วันพุธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์","วันอาทิตย์"],nextMon:"วันจันทร์ถัดไป",today:"วันนี้",
- ev:{elixirPass:"บัตรผ่านยาวิเศษ",rapidRush:"กระแสน้ำเชี่ยว",twinFlames:"เปลวไฟแฝด",taskKnockout:"ภารกิจน็อกเอาต์",pickFour:"เลือกสี่อย่าง",coinRace:"แข่งเหรียญ",potionRace:"แข่งยาวิเศษ",shinyTrio:"สามประกายแวววาว",lightningPass:"บัตรผ่านสายฟ้า",wheelOfFate:"วงล้อโชคชะตา",normalRace:"การแข่งปกติ",adventureRush:"กระแสผจญภัย",warriorArena:"สังเวียนนักรบ"},
+ ev:{elixirPass:"บัตรผ่านยาวิเศษ",rapidRush:"กระแสน้ำเชี่ยว",twinFlames:"เปลวไฟแฝด",taskKnockout:"ภารกิจน็อกเอาต์",pickFour:"เลือกสี่อย่าง",coinRace:"แข่งเหรียญ",potionRace:"แข่งยาวิเศษ",shinyTrio:"สามประกายแวววาว",lightningPass:"บัตรผ่านสายฟ้า",wheelOfFate:"วงล้อโชคชะตา",normalRace:"การแข่งปกติ",adventureRush:"กระแสผจญภัย (ทำซ้ำได้)",warriorArena:"สังเวียนนักรบ"},
  attack:"โจมตี",raid:"ปล้น",elixir:"ยาวิเศษ",daysN:"{n} วัน",missions:"{n} ภารกิจ",goldHammer:"ค้อนทอง",totalN:"รวม {n}",stages:"{n} ด่าน",
  freeUnlockCarry:"ปลดล็อกฟรี ใช้ต่อได้ถึงบัตรผ่านยาวิเศษวันศุกร์",loginCountdown:"นับถอยหลัง 12 ชม. หลังล็อกอิน",collectElixir:"สะสมยาวิเศษ",collectPieces:"สะสมชิ้นส่วนจากบัตรผ่านยาวิเศษ",
  freeUnlockNote:"อย่าลืมกด \"ปลดล็อกฟรี\" ที่บัตรผ่านยาวิเศษ",normalToPotion:"การแข่งปกติเปลี่ยนเป็นแข่งยาวิเศษ",potionToNormal:"แข่งยาวิเศษกลับเป็นการแข่งปกติ",potionTrack:"รางวัลสุดท้ายเส้นทางยาวิเศษ",
@@ -804,7 +804,7 @@ var I18N={
  loop:"Ganti ke ×{b} sampai hadiah utama ({p} poin), lalu ulangi",perSpin:"{e} elixir per putaran",
  schedTitle:"Jadwal event mingguan",schedDesc:"Event yang bergilir setiap minggu selama Penjelajah yang Hilang. Cek jadwalnya sebelum menabung elixir dan spin.",tz:"Waktu Taiwan (UTC+8)",
  days:["Senin","Selasa","Rabu","Kamis","Jumat","Sabtu","Minggu"],nextMon:"Senin berikutnya",today:"Hari ini",
- ev:{elixirPass:"Elixir Pass",rapidRush:"Arus Deras",twinFlames:"Api Kembar",taskKnockout:"Misi KO",pickFour:"Pilih Empat",coinRace:"Balapan Koin",potionRace:"Balapan Ramuan",shinyTrio:"Trio Berkilau",lightningPass:"Lightning Pass",wheelOfFate:"Roda Takdir",normalRace:"Balapan Normal",adventureRush:"Demam Petualangan",warriorArena:"Arena Ksatria"},
+ ev:{elixirPass:"Elixir Pass",rapidRush:"Arus Deras",twinFlames:"Api Kembar",taskKnockout:"Misi KO",pickFour:"Pilih Empat",coinRace:"Balapan Koin",potionRace:"Balapan Ramuan",shinyTrio:"Trio Berkilau",lightningPass:"Lightning Pass",wheelOfFate:"Roda Takdir",normalRace:"Balapan Normal",adventureRush:"Demam Petualangan (bisa diulang)",warriorArena:"Arena Ksatria"},
  attack:"Serangan",raid:"Serbuan",elixir:"Elixir",daysN:"{n} hari",missions:"{n} misi",goldHammer:"Palu emas",totalN:"Total {n}",stages:"{n} tahap",
  freeUnlockCarry:"Buka gratis, terbawa ke Elixir Pass hari Jumat",loginCountdown:"Hitung mundur 12 jam setelah login",collectElixir:"Kumpulkan elixir",collectPieces:"Kumpulkan kepingan dari Elixir Pass",
  freeUnlockNote:"Jangan lupa tekan \"Buka gratis\" di Elixir Pass",normalToPotion:"Balapan normal berganti jadi Balapan Ramuan",potionToNormal:"Balapan Ramuan kembali ke balapan normal",potionTrack:"Hadiah akhir jalur ramuan",
@@ -832,7 +832,7 @@ var I18N={
  loop:"Cambia a ×{b} hasta el premio principal ({p} puntos) y reinicia",perSpin:"{e} elixires cada una",
  schedTitle:"Horario semanal de eventos",schedDesc:"Eventos que rotan cada semana durante Exploradores Perdidos. Revisa los horarios antes de ahorrar elixires y tiradas.",tz:"Hora de Taiwán (UTC+8)",
  days:["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"],nextMon:"Lunes siguiente",today:"Hoy",
- ev:{elixirPass:"Pase de Elixir",rapidRush:"Torrente Frenético",twinFlames:"Llamas Gemelas",taskKnockout:"Misión K.O.",pickFour:"Elige Cuatro",coinRace:"Carrera de Monedas",potionRace:"Carrera de Pociones",shinyTrio:"Trío Brillante",lightningPass:"Pase Relámpago",wheelOfFate:"Rueda del Destino",normalRace:"Carrera Normal",adventureRush:"Fiebre de Aventura",warriorArena:"Arena del Guerrero"},
+ ev:{elixirPass:"Pase de Elixir",rapidRush:"Torrente Frenético",twinFlames:"Llamas Gemelas",taskKnockout:"Misión K.O.",pickFour:"Elige Cuatro",coinRace:"Carrera de Monedas",potionRace:"Carrera de Pociones",shinyTrio:"Trío Brillante",lightningPass:"Pase Relámpago",wheelOfFate:"Rueda del Destino",normalRace:"Carrera Normal",adventureRush:"Fiebre de Aventura (repetible)",warriorArena:"Arena del Guerrero"},
  attack:"Ataque",raid:"Asalto",elixir:"Elixires",daysN:"{n} días",missions:"{n} misiones",goldHammer:"Martillo dorado",totalN:"{n} en total",stages:"{n} etapas",
  freeUnlockCarry:"Desbloqueo gratis; se conserva hasta el Pase de Elixir del viernes",loginCountdown:"Cuenta atrás de 12 h al iniciar sesión",collectElixir:"Reúne elixires",collectPieces:"Reúne piezas del Pase de Elixir",
  freeUnlockNote:"Recuerda pulsar \"Desbloqueo gratis\" en el Pase de Elixir",normalToPotion:"Las carreras normales pasan a ser de pociones",potionToNormal:"Las carreras de pociones vuelven a ser normales",potionTrack:"Premio final de la pista de pociones",
@@ -860,7 +860,7 @@ var I18N={
  loop:"Mude para ×{b} até o prêmio principal ({p} pontos) e recomece",perSpin:"{e} elixires cada",
  schedTitle:"Agenda semanal de eventos",schedDesc:"Eventos que se revezam toda semana durante Exploradores Perdidos. Confira os horários antes de guardar elixires e giros.",tz:"Horário de Taiwan (UTC+8)",
  days:["Segunda","Terça","Quarta","Quinta","Sexta","Sábado","Domingo"],nextMon:"Segunda seguinte",today:"Hoje",
- ev:{elixirPass:"Passe de Elixir",rapidRush:"Correnteza Frenética",twinFlames:"Chamas Gêmeas",taskKnockout:"Missão Nocaute",pickFour:"Escolha Quatro",coinRace:"Corrida de Moedas",potionRace:"Corrida de Poções",shinyTrio:"Trio Brilhante",lightningPass:"Passe Relâmpago",wheelOfFate:"Roda do Destino",normalRace:"Corrida Normal",adventureRush:"Febre da Aventura",warriorArena:"Arena do Guerreiro"},
+ ev:{elixirPass:"Passe de Elixir",rapidRush:"Correnteza Frenética",twinFlames:"Chamas Gêmeas",taskKnockout:"Missão Nocaute",pickFour:"Escolha Quatro",coinRace:"Corrida de Moedas",potionRace:"Corrida de Poções",shinyTrio:"Trio Brilhante",lightningPass:"Passe Relâmpago",wheelOfFate:"Roda do Destino",normalRace:"Corrida Normal",adventureRush:"Febre da Aventura (repetível)",warriorArena:"Arena do Guerreiro"},
  attack:"Ataque",raid:"Saque",elixir:"Elixires",daysN:"{n} dias",missions:"{n} missões",goldHammer:"Martelo dourado",totalN:"{n} no total",stages:"{n} etapas",
  freeUnlockCarry:"Desbloqueio grátis; continua até o Passe de Elixir de sexta",loginCountdown:"Contagem de 12 h após entrar",collectElixir:"Junte elixires",collectPieces:"Junte peças do Passe de Elixir",
  freeUnlockNote:"Lembre de tocar em \"Desbloqueio grátis\" no Passe de Elixir",normalToPotion:"Corridas normais viram Corridas de Poções",potionToNormal:"Corridas de Poções voltam ao normal",potionTrack:"Prêmio final da trilha de poções",
@@ -873,7 +873,7 @@ var EXTRA={
 "zh-Hant":{
  tzName:"台灣時間",tzTpl:"時間為{z}（{o}）",tzSrc:"",nextDay:"下{d}",
  tipsTitle:"提醒您",
- tip1:"這次活動不要合併閃電。",
+ tip1:"這次活動不要先合併閃電。",
  tip2:"魔藥也別急著拿去探險。",
  tip3:"請等到週五的命運輪盤開始收集藥水後，再取得藥水。",
  motto:"跟著時間走，輕鬆玩活動！",
@@ -882,7 +882,7 @@ var EXTRA={
 "en":{
  tzName:"US Eastern Time",tzTpl:"Times shown in {z} ({o})",tzSrc:"Converted from Taiwan time (UTC+8).",nextDay:"Next {d}",
  tipsTitle:"Heads-up",
- tip1:"Don't merge lightning during this event.",
+ tip1:"Don't merge lightning yet during this event.",
  tip2:"Don't rush to spend elixirs on the expedition either.",
  tip3:"Wait for Friday's Wheel of Fate to start collecting elixirs before you pick up more.",
  motto:"Follow the schedule and enjoy the event with ease!",
@@ -891,7 +891,7 @@ var EXTRA={
 "vi":{
  tzName:"giờ Việt Nam",tzTpl:"Giờ hiển thị theo {z} ({o})",tzSrc:"Quy đổi từ giờ Đài Loan (UTC+8).",nextDay:"{d} tuần sau",
  tipsTitle:"Lưu ý",
- tip1:"Đừng gộp tia chớp trong sự kiện này.",
+ tip1:"Sự kiện này đừng vội gộp tia chớp.",
  tip2:"Cũng đừng vội dùng thuốc tiên để thám hiểm.",
  tip3:"Hãy đợi Vòng Quay Định Mệnh thứ Sáu bắt đầu thu thập thuốc tiên rồi mới lấy thuốc tiên.",
  motto:"Theo lịch mà chơi, sự kiện thật nhẹ nhàng!",
@@ -900,7 +900,7 @@ var EXTRA={
 "ja":{
  tzName:"日本時間",tzTpl:"時刻は{z}（{o}）で表示",tzSrc:"台湾時間（UTC+8）から換算しています。",nextDay:"翌週の{d}",
  tipsTitle:"ご注意",
- tip1:"今回のイベントでは稲妻を合成しないでください。",
+ tip1:"今回のイベントでは、まだ稲妻を合成しないでください。",
  tip2:"エリクサーも急いで探検に使わないでください。",
  tip3:"金曜日の運命のルーレットでエリクサー集めが始まってから、エリクサーを入手しましょう。",
  motto:"スケジュール通りに進めて、気楽にイベントを楽しもう！",
@@ -909,7 +909,7 @@ var EXTRA={
 "ko":{
  tzName:"한국 시간",tzTpl:"{z} 기준 ({o})",tzSrc:"대만 시간(UTC+8)에서 변환했습니다.",nextDay:"다음 주 {d}",
  tipsTitle:"알림",
- tip1:"이번 이벤트에서는 번개를 합치지 마세요.",
+ tip1:"이번 이벤트에서는 번개를 먼저 합치지 마세요.",
  tip2:"엘릭서도 서둘러 탐험에 쓰지 마세요.",
  tip3:"금요일 운명의 룰렛에서 엘릭서 수집이 시작된 뒤에 엘릭서를 얻으세요.",
  motto:"일정대로 따라가며 편하게 이벤트를 즐기세요!",
@@ -918,7 +918,7 @@ var EXTRA={
 "th":{
  tzName:"เวลาประเทศไทย",tzTpl:"แสดงเวลาตาม{z} ({o})",tzSrc:"แปลงจากเวลาไต้หวัน (UTC+8)",nextDay:"{d}ถัดไป",
  tipsTitle:"ข้อควรระวัง",
- tip1:"อีเวนต์นี้อย่ารวมสายฟ้า",
+ tip1:"อีเวนต์นี้อย่าเพิ่งรวมสายฟ้า",
  tip2:"อย่าเพิ่งรีบใช้ยาวิเศษไปผจญภัย",
  tip3:"รอให้วงล้อโชคชะตาวันศุกร์เริ่มสะสมยาวิเศษก่อน แล้วค่อยรับยาวิเศษ",
  motto:"ทำตามตารางเวลา เล่นอีเวนต์ได้สบาย ๆ!",
@@ -927,7 +927,7 @@ var EXTRA={
 "id":{
  tzName:"WIB (Jakarta)",tzTpl:"Waktu ditampilkan dalam {z} ({o})",tzSrc:"Dikonversi dari waktu Taiwan (UTC+8).",nextDay:"{d} berikutnya",
  tipsTitle:"Perhatian",
- tip1:"Jangan gabungkan petir di event ini.",
+ tip1:"Jangan gabungkan petir dulu di event ini.",
  tip2:"Jangan buru-buru memakai elixir untuk berpetualang.",
  tip3:"Tunggu Roda Takdir hari Jumat mulai mengumpulkan elixir, baru ambil elixir.",
  motto:"Ikuti jadwalnya, main event jadi santai!",
@@ -936,7 +936,7 @@ var EXTRA={
 "es":{
  tzName:"hora del centro de México",tzTpl:"Horas en {z} ({o})",tzSrc:"Convertidas desde la hora de Taiwán (UTC+8).",nextDay:"{d} siguiente",
  tipsTitle:"Atención",
- tip1:"No combines rayos en este evento.",
+ tip1:"No combines rayos todavía en este evento.",
  tip2:"Tampoco te apresures a gastar elixires en la expedición.",
  tip3:"Espera a que la Rueda del Destino del viernes empiece a reunir elixires antes de conseguir más.",
  motto:"¡Sigue el horario y disfruta el evento sin complicaciones!",
@@ -945,7 +945,7 @@ var EXTRA={
 "pt":{
  tzName:"horário de Brasília",tzTpl:"Horários em {z} ({o})",tzSrc:"Convertidos do horário de Taiwan (UTC+8).",nextDay:"{d} seguinte",
  tipsTitle:"Atenção",
- tip1:"Não combine raios neste evento.",
+ tip1:"Não combine raios ainda neste evento.",
  tip2:"Também não tenha pressa em gastar elixires na expedição.",
  tip3:"Espere a Roda do Destino de sexta começar a juntar elixires antes de pegar mais.",
  motto:"Siga a agenda e aproveite o evento sem complicação!",
